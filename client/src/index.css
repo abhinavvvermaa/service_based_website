@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================= BLINKING / SIGNAL ANIMATIONS ================= */
+
+@keyframes blink-soft {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-blink-soft {
+  animation: blink-soft 2.5s infinite;
+}
+
+@keyframes led-pulse {
+  0% {
+    box-shadow: 0 0 0px rgba(59,130,246,0.6);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(59,130,246,0.9);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(59,130,246,0.6);
+  }
+}
+
+.animate-led {
+  animation: led-pulse 2.8s ease-in-out infinite;
+}
+
+@keyframes signal-blink {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-signal {
+  animation: signal-blink 1.5s infinite;
+}
