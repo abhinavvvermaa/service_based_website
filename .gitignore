@@ -1,0 +1,14 @@
+# ignore backend
+server/
+
+# ignore node modules everywhere
+node_modules/
+**/node_modules/
+
+# ignore build output
+dist/
+**/dist/
+
+# env files
+.env
+.env.*
