@@ -12,7 +12,7 @@ import hardwareImg from "../assets/services/hardware.avif";
 import pcbImg from "../assets/services/pcb.avif";
 import firmwareImg from "../assets/services/firmware.avif";
 import prototypeImg from "../assets/services/prototyping.avif";
-import testingImg from "../assets/services/testing.jpg";
+import testingImg from "../assets/services/Testing.jpg";
 import manufacturingImg from "../assets/services/production.jpg";
 
 export default function Services() {
@@ -141,6 +141,15 @@ export default function Services() {
           Talk to Our Experts
         </a>
       </section>
+
+      {/* ================= FOOTER ================= */}
+      <footer className="bg-gray-900 text-white py-10 text-center text-sm">
+        <p>© 2025 NavniElectroTech . All Rights Reserved.</p>
+        <p className="mt-2">
+          6c/21-c, Azad Nagar Gali No-3 Agra, UP | +91-9634624084 |
+          NavniElectroTech.in
+        </p>
+      </footer>
 
     </div>
   );

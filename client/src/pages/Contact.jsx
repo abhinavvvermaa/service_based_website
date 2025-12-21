@@ -114,7 +114,7 @@ export default function Contact() {
                 <Phone className="w-6 h-6 text-blue-600 mt-1" />
                 <div>
                   <h4 className="font-semibold">Business Enquiry</h4>
-                  <p>+91-7011584185</p>
+                  <p>+91-9634624084</p>
                 </div>
               </div>
 
@@ -122,7 +122,7 @@ export default function Contact() {
                 <Mail className="w-6 h-6 text-purple-600 mt-1" />
                 <div>
                   <h4 className="font-semibold">Email</h4>
-                  <p>info@psiborg.in</p>
+                  <p>NavniElectroTech</p>
                 </div>
               </div>
 
@@ -131,8 +131,8 @@ export default function Contact() {
                 <div>
                   <h4 className="font-semibold">Head Office</h4>
                   <p>
-                    A-57, Fifth Floor, Sector-136<br />
-                    Noida, UP-201304, India
+                     6c/21-c, Azad Nagar Gali No-3<br />
+                     Agra, UP, India
                   </p>
                 </div>
               </div>
@@ -180,14 +180,13 @@ export default function Contact() {
       </section>
 
       {/* ================= FOOTER ================= */}
-      <section className="bg-gray-900 text-white py-14 text-center">
-        <p className="text-lg mb-2">
-          Since 2018 — Delivering Reliable IoT Solutions
+      <footer className="bg-gray-900 text-white py-10 text-center text-sm">
+        <p>© 2025 NavniElectroTech . All Rights Reserved.</p>
+        <p className="mt-2">
+          6c/21-c, Azad Nagar Gali No-3 Agra, UP | +91-9634624084 |
+          NavniElectroTech.in
         </p>
-        <p className="text-sm text-gray-400">
-          © 2025 PsiBorg Technologies
-        </p>
-      </section>
+      </footer>
 
     </div>
   );

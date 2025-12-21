@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import heroBg from "../assets/home/hero-bg.jpg";
+import heroBg from "../assets/home/electronics-hero.png";
 import labImg from "../assets/home/lab.jpg";
 import pcbImg from "../assets/home/pcb.png";
 import embeddedImg from "../assets/home/embedded.avif";
@@ -42,31 +42,40 @@ export default function Home() {
   return (
     <div className="font-sans bg-gray-50 text-gray-800 overflow-hidden">
 
-      {/* ================= HERO SECTION ================= */}
-      <section
-        className="relative text-white py-36 px-8 text-center bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-purple-900/90 animate-gradient-x"></div>
+     {/* ================= HERO SECTION ================= */}
+<section className="relative w-full aspect-[16/9] overflow-hidden">
+  <img
+    src={heroBg}
+    alt="Electronics Hero"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
 
-        <div className="relative z-10">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 animate-fade-up">
-            End-to-End IoT & Hardware Solutions
-          </h1>
+  {/* LEFT-ALIGNED TEXT */}
+<div className="absolute inset-0 flex items-start pt-24">
+  <div className="max-w-2xl px-12 text-white">
+    <h1 className="text-3xl md:text-5xl font-extrabold mb-4">
+      Cutting-edge <br />
+      Electronics Solutions
+    </h1>
 
-          <p className="text-lg md:text-xl max-w-4xl mx-auto mb-8 animate-fade-up delay-200">
-            XYZBorg delivers integrated hardware, embedded systems, and IoT
-            solutions from concept to production.
-          </p>
+    <p className="text-base md:text-lg mb-6">
+      Empowering your business with innovative
+      electronic and embedded systems
+    </p>
 
-          <Link
-            to="/contact"
-            className="inline-block bg-white text-blue-700 px-8 py-3 rounded-lg font-bold hover:scale-105 transition-transform animate-fade-up delay-400"
-          >
-            Contact Us
-          </Link>
-        </div>
-      </section>
+    <Link
+      to="/contact"
+      className="inline-block bg-green-500 hover:bg-green-600
+                 text-white px-8 py-3 rounded-lg font-bold"
+    >
+      Get Started
+    </Link>
+  </div>
+</div>
+
+
+</section>
+
 
      {/* ================= END-TO-END IOT STACK ================= */}
 <section className="relative py-28 px-8 bg-gray-900 text-white overflow-hidden">
@@ -194,7 +203,7 @@ export default function Home() {
       {/* ================= WHY CHOOSE ================= */}
       <section className="py-24 bg-gray-100 px-8">
         <h2 className="text-4xl font-bold text-center mb-16 animate-fade-up">
-          Why Choose XYZBorg?
+          Why Choose NavniElectroTech?
         </h2>
 
         <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
@@ -305,11 +314,11 @@ export default function Home() {
       {/* ================= FOOTER ================= */}
       <footer className="bg-black text-gray-400 py-12 px-8 text-center text-sm">
         <p className="mb-2 text-white font-semibold">
-          © 2025 XYZBorg Technologies
+          © 2025 NavniElectroTech
         </p>
         <p>
-          A-57, Fifth Floor, Sector-136, Noida, UP | +91-7011584185 |
-          info@xyzborg.in
+          6c/21-c, Azad Nagar Gali No-3 Agra, UP | +91-9634624084 |
+          NavniElectroTech.in
         </p>
       </footer>
 

@@ -1,10 +1,8 @@
 export default function About() {
   return (
     <div className="font-sans bg-gray-50 text-gray-800">
-
       {/* ================= WAVY HERO SECTION ================= */}
       <section className="relative overflow-hidden text-white">
-
         {/* Base Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-fuchsia-500" />
 
@@ -47,11 +45,11 @@ export default function About() {
         {/* HERO CONTENT */}
         <div className="relative z-10 py-28 px-8 text-center max-w-6xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
-            About XYZBorg
+            About NavniElectroTech
           </h1>
           <p className="max-w-4xl mx-auto text-lg md:text-xl leading-relaxed text-white/90">
-            XYZBorg is an IoT company driven by innovation, science, and the
-            harmonious integration of humans and technology.
+            NavniElectroTech is an IoT company driven by innovation, science,
+            and the harmonious integration of humans and technology.
           </p>
         </div>
       </section>
@@ -59,29 +57,35 @@ export default function About() {
       {/* ================= MEANING SECTION ================= */}
       <section className="py-20 px-8 max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12">
-          What XYZBorg Means
+          What NavniElectroTech Means
         </h2>
 
         <div className="grid md:grid-cols-2 gap-10">
           <div className="bg-white p-8 rounded-xl shadow-lg">
             <h3 className="text-2xl font-semibold mb-4 text-blue-600">
-              XYZ (Ψ)
+              Navni
             </h3>
             <p className="leading-relaxed">
-              In physics, XYZ (Ψ) represents a wave function describing particle behavior.
-              It reflects our commitment to advanced technology and leveraging the
-              flow of electrons through IoT for powerful real-world applications.
+              Derived from the idea of “Nav” (New / Innovation), Navni
+              represents fresh thinking, innovation, and forward momentum. It
+              reflects our focus on creating new, smarter electronic solutions
+              that solve real-world problems.
             </p>
           </div>
 
           <div className="bg-white p-8 rounded-xl shadow-lg">
             <h3 className="text-2xl font-semibold mb-4 text-purple-600">
-              Borg
+              ElectroTech
             </h3>
             <p className="leading-relaxed">
-              Inspired by science fiction, Borg symbolizes the seamless integration
-              of humans and machines. At XYZBorg, it represents technology working
-              in harmony with human intelligence.
+              ElectroTech represents the fusion of electronics and advanced
+              technology. It encompasses the design, development, and
+              integration of electronic systems, embedded hardware, sensors,
+              power electronics, and intelligent software to create smart,
+              efficient, and connected solutions. At its core, ElectroTech
+              stands for innovation, reliability, and engineering excellence,
+              enabling modern industries through IoT, automation, and
+              next-generation electronic technologies.
             </p>
           </div>
         </div>
@@ -97,9 +101,7 @@ export default function About() {
             { value: "40+", label: "Talented Team" },
           ].map((stat, i) => (
             <div key={i} className="p-8 rounded-xl shadow-md bg-gray-50">
-              <h3 className="text-4xl font-bold text-blue-600">
-                {stat.value}
-              </h3>
+              <h3 className="text-4xl font-bold text-blue-600">{stat.value}</h3>
               <p className="mt-2 font-medium">{stat.label}</p>
             </div>
           ))}
@@ -114,8 +116,8 @@ export default function About() {
               Our Vision
             </h2>
             <p className="leading-relaxed">
-              To unite science, technology, and innovation to transform how humans
-              interact with their environment, inspiring curiosity and
+              To unite science, technology, and innovation to transform how
+              humans interact with their environment, inspiring curiosity and
               groundbreaking ideas.
             </p>
           </div>
@@ -135,15 +137,13 @@ export default function About() {
       {/* ================= JOURNEY ================= */}
       <section className="bg-gray-100 py-20 px-8">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-10">
-            Our Journey
-          </h2>
+          <h2 className="text-4xl font-bold text-center mb-10">Our Journey</h2>
           <p className="leading-relaxed text-gray-700">
-            XYZBorg is a DPIIT-recognized startup with a passionate team of
-            electronics engineers, firmware developers, and software experts.
-            We identified a critical industry gap between hardware and software
-            teams—and built XYZBorg to bridge it under one roof with excellence,
-            speed, and rigorous testing.
+            NavniElectroTech is a DPIIT-recognized startup with a passionate
+            team of electronics engineers, firmware developers, and software
+            experts. We identified a critical industry gap between hardware and
+            software teams—and built NavniElectroTech to bridge it under one
+            roof with excellence, speed, and rigorous testing.
           </p>
         </div>
       </section>
@@ -156,7 +156,8 @@ export default function About() {
           </h2>
 
           <p className="text-center text-gray-600 max-w-3xl mx-auto mb-14">
-            Insights, research, and expert perspectives from our engineers and IoT specialists.
+            Insights, research, and expert perspectives from our engineers and
+            IoT specialists.
           </p>
 
           <div className="grid md:grid-cols-3 gap-10">
@@ -167,7 +168,8 @@ export default function About() {
                 tag: "IoT Architecture",
               },
               {
-                title: "From Prototype to Production: Avoiding Common Hardware Pitfalls",
+                title:
+                  "From Prototype to Production: Avoiding Common Hardware Pitfalls",
                 desc: "Key engineering considerations that help startups scale hardware products without costly redesigns.",
                 tag: "Hardware Engineering",
               },
@@ -189,9 +191,7 @@ export default function About() {
                   {blog.title}
                 </h3>
 
-                <p className="text-gray-600 mb-6">
-                  {blog.desc}
-                </p>
+                <p className="text-gray-600 mb-6">{blog.desc}</p>
 
                 <button className="text-blue-600 font-semibold hover:underline">
                   Read More →
@@ -204,12 +204,12 @@ export default function About() {
 
       {/* ================= FOOTER ================= */}
       <footer className="bg-gray-900 text-white py-10 text-center text-sm">
-        <p>© 2025 XYZBorg Technologies. All Rights Reserved.</p>
+        <p>© 2025 NavniElectroTech . All Rights Reserved.</p>
         <p className="mt-2">
-          A-57, Fifth Floor, Sector-136, Noida | +91-7011584185 | info@XYZborg.in
+          6c/21-c, Azad Nagar Gali No-3 Agra, UP | +91-9634624084 |
+          NavniElectroTech.in
         </p>
       </footer>
-
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
+import logo from "../assets/logo2.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -8,25 +9,26 @@ export default function Navbar() {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
-    { name: "Solutions", path: "/solutions" }, 
-    { name: "Career", path: "/career" }, 
+    { name: "Solutions", path: "/solutions" },
+    { name: "Career", path: "/career" },
     { name: "Contact", path: "/contact" },
   ];
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-gray-200">
-      <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
 
-        {/* Logo */}
-        <Link
-          to="/"
-          className="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-        >
-          XYZ
+        {/* LOGO (BIGGER) */}
+        <Link to="/" className="flex items-center">
+          <img
+            src={logo}
+            alt="Navni ElectroTech"
+            className="h-8 w-auto"
+          />
         </Link>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center space-x-10 font-medium">
+        {/* DESKTOP MENU */}
+        <ul className="hidden md:flex items-center space-x-12 font-medium text-lg">
           {navItems.map((item) => (
             <NavLink
               key={item.name}
@@ -38,39 +40,36 @@ export default function Navbar() {
               }
             >
               {item.name}
-
-              {/* Underline */}
-              <span
-                className={`absolute left-0 -bottom-1 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300
-                ${"group-hover:w-full"} w-0`}
-              ></span>
+              <span className="absolute left-0 -bottom-1 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full w-0"></span>
             </NavLink>
           ))}
         </ul>
 
-        {/* CTA Button */}
+        {/* CTA BUTTON (BIGGER) */}
         <div className="hidden md:block">
           <Link
             to="/contact"
-            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition"
+            className="bg-gradient-to-r from-blue-600 to-purple-600
+                       text-white px-8 py-3 rounded-lg
+                       font-semibold text-lg hover:opacity-90 transition"
           >
             Get Started
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* MOBILE MENU BUTTON */}
         <button
-          className="md:hidden text-2xl text-gray-800"
+          className="md:hidden text-3xl text-gray-800"
           onClick={() => setOpen(!open)}
         >
           ☰
         </button>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* MOBILE MENU */}
       {open && (
         <div className="md:hidden bg-white shadow-lg">
-          <ul className="flex flex-col px-6 py-4 space-y-4 font-medium text-gray-700">
+          <ul className="flex flex-col px-8 py-6 space-y-6 font-medium text-lg text-gray-700">
             {navItems.map((item) => (
               <NavLink
                 key={item.name}
@@ -87,7 +86,8 @@ export default function Navbar() {
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 rounded-lg font-semibold text-center"
+              className="mt-4 bg-gradient-to-r from-blue-600 to-purple-600
+                         text-white py-3 rounded-lg font-semibold text-center"
             >
               Get Started
             </Link>
