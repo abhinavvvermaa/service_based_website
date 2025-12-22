@@ -1,21 +1,11 @@
-import {
-  Phone,
-  Mail,
-  MapPin,
-  Clock,
-  ShieldCheck,
-  Users,
-} from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ShieldCheck, Users } from "lucide-react";
 
 export default function Contact() {
   return (
     <div className="bg-gray-50 text-gray-800">
-
       {/* ================= HERO ================= */}
       <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-24 px-8 text-center">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
-          Contact Us
-        </h1>
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-6">Contact Us</h1>
         <p className="max-w-3xl mx-auto text-lg md:text-xl">
           Share your idea with us. Our experts will help you turn it into a
           scalable and reliable product.
@@ -43,39 +33,53 @@ export default function Contact() {
       {/* ================= CONTACT + MAP ================= */}
       <section className="py-20 px-8 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16">
-
           {/* LEFT: CONTACT FORM */}
           <div className="bg-white p-10 rounded-2xl shadow-xl">
             <h3 className="text-3xl font-bold mb-6 text-gray-900">
               Share Your Requirement
             </h3>
 
-            <form className="space-y-6">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              className="space-y-6"
+            >
+              {/* REQUIRED hidden field */}
+              <input type="hidden" name="form-name" value="contact" />
+
               <input
                 type="text"
+                name="name"
                 placeholder="Your Name"
+                required
                 className="w-full border px-5 py-3 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none"
               />
 
               <input
                 type="email"
+                name="email"
                 placeholder="Business Email"
+                required
                 className="w-full border px-5 py-3 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none"
               />
 
               <input
                 type="tel"
+                name="phone"
                 placeholder="Phone Number"
                 className="w-full border px-5 py-3 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none"
               />
 
               <input
                 type="text"
+                name="subject"
                 placeholder="Subject"
                 className="w-full border px-5 py-3 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none"
               />
 
               <textarea
+                name="message"
                 rows="5"
                 placeholder="Drop your message"
                 className="w-full border px-5 py-3 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none"
@@ -96,7 +100,6 @@ export default function Contact() {
 
           {/* RIGHT: MAP + CONTACT DETAILS */}
           <div className="space-y-8">
-
             {/* Map */}
             <div className="rounded-2xl overflow-hidden shadow-xl border h-[350px]">
               <iframe
@@ -131,13 +134,13 @@ export default function Contact() {
                 <div>
                   <h4 className="font-semibold">Head Office</h4>
                   <p>
-                     6c/21-c, Azad Nagar Gali No-3<br />
-                     Agra, UP, India
+                    6c/21-c, Azad Nagar Gali No-3
+                    <br />
+                    Agra, UP, India
                   </p>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -168,7 +171,10 @@ export default function Contact() {
                 a: "Yes, we collaborate with startups, SMEs, and enterprises.",
               },
             ].map((item, index) => (
-              <details key={index} className="bg-gray-50 p-6 rounded-xl shadow-md">
+              <details
+                key={index}
+                className="bg-gray-50 p-6 rounded-xl shadow-md"
+              >
                 <summary className="font-semibold cursor-pointer">
                   {item.q}
                 </summary>
@@ -187,7 +193,6 @@ export default function Contact() {
           NavniElectroTech.in
         </p>
       </footer>
-
     </div>
   );
 }

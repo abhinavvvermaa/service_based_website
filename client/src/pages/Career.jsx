@@ -199,86 +199,68 @@ export default function Careers() {
 
       {/* ================= JOIN US FORM ================= */}
       <section className="bg-gray-50 py-28 px-8">
-  <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16">
-    <div className="bg-white rounded-2xl shadow-lg p-10 border border-gray-100">
-      <h2 className="text-4xl font-bold mb-8">Join Us</h2>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16">
+          <div className="bg-white rounded-2xl shadow-lg p-10 border border-gray-100">
+            <h2 className="text-4xl font-bold mb-8">Join Us</h2>
 
-      <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        encType="multipart/form-data"
-        className="space-y-6"
-      >
-        {/* REQUIRED hidden input */}
-        <input type="hidden" name="form-name" value="contact" />
+            <form className="space-y-6">
+              <input
+                className="w-full border border-gray-300 px-5 py-3 rounded-xl
+           focus:ring-2 focus:ring-blue-600 focus:border-blue-600
+           outline-none"
+                placeholder="Name"
+              />
+              <input
+                className="w-full border border-gray-300 px-5 py-3 rounded-xl
+           focus:ring-2 focus:ring-blue-600 focus:border-blue-600
+           outline-none"
+                placeholder="Email Address"
+              />
+              <input
+                className="w-full border border-gray-300 px-5 py-3 rounded-xl
+           focus:ring-2 focus:ring-blue-600 focus:border-blue-600
+           outline-none"
+                placeholder="Subject"
+              />
+              <textarea
+                rows="4"
+                className="w-full border border-gray-300 px-5 py-3 rounded-xl
+           focus:ring-2 focus:ring-blue-600 focus:border-blue-600
+           outline-none"
+                placeholder="Cover Letter"
+              />
+              <div className="border rounded-lg px-4 py-3 flex items-center gap-3">
+                <Upload className="w-5 h-5" />
+                <input type="file" className="ml-auto" />
+              </div>
+              <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-bold">
+                Submit
+              </button>
+            </form>
+          </div>
 
-        <input
-          name="name"
-          required
-          className="w-full border border-gray-300 px-5 py-3 rounded-xl
-          focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
-          placeholder="Name"
-        />
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-2xl font-bold mb-3">Address</h3>
+              <p>
+                6c/21-c, Azad Nagar Gali No-3
+                <br />
+                Agra, UP
+              </p>
+            </div>
 
-        <input
-          type="email"
-          name="email"
-          required
-          className="w-full border border-gray-300 px-5 py-3 rounded-xl
-          focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
-          placeholder="Email Address"
-        />
-
-        <input
-          name="subject"
-          className="w-full border border-gray-300 px-5 py-3 rounded-xl
-          focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
-          placeholder="Subject"
-        />
-
-        <textarea
-          name="message"
-          rows="4"
-          className="w-full border border-gray-300 px-5 py-3 rounded-xl
-          focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
-          placeholder="Cover Letter"
-        />
-
-        <div className="border rounded-lg px-4 py-3 flex items-center gap-3">
-          <Upload className="w-5 h-5" />
-          <input type="file" name="resume" className="ml-auto" />
+            <div>
+              <h3 className="text-2xl font-bold mb-3">Contact Us</h3>
+              <p className="flex items-center gap-2">
+                <Phone className="w-5 h-5 text-blue-600" /> +91-9634624084
+              </p>
+              <p className="flex items-center gap-2 mt-2">
+                <Mail className="w-5 h-5 text-purple-600" /> NavniElectroTech
+              </p>
+            </div>
+          </div>
         </div>
-
-        <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-bold">
-          Submit
-        </button>
-      </form>
-    </div>
-
-    <div className="space-y-8">
-      <div>
-        <h3 className="text-2xl font-bold mb-3">Address</h3>
-        <p>
-          6c/21-c, Azad Nagar Gali No-3
-          <br />
-          Agra, UP
-        </p>
-      </div>
-
-      <div>
-        <h3 className="text-2xl font-bold mb-3">Contact Us</h3>
-        <p className="flex items-center gap-2">
-          <Phone className="w-5 h-5 text-blue-600" /> +91-9634624084
-        </p>
-        <p className="flex items-center gap-2 mt-2">
-          <Mail className="w-5 h-5 text-purple-600" /> NavniElectroTech
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
+      </section>
 
      {/* ================= FOOTER ================= */}
       <footer className="bg-gray-900 text-white py-10 text-center text-sm">
