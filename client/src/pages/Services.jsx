@@ -12,7 +12,7 @@ import hardwareImg from "../assets/services/hardware.avif";
 import pcbImg from "../assets/services/pcb.avif";
 import firmwareImg from "../assets/services/firmware.avif";
 import prototypeImg from "../assets/services/prototyping.avif";
-import testingImg from "../assets/services/Testing.jpg";
+import testingImg from "../assets/services/testing.jpg";
 import manufacturingImg from "../assets/services/production.jpg";
 
 export default function Services() {
