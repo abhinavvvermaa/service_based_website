@@ -1,9 +1,41 @@
 import { Phone, Mail, MapPin, Clock, ShieldCheck, Users } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
 
 export default function Contact() {
+  const formRef = useRef();
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus("");
+
+    emailjs
+      .sendForm(
+        "service_zi2l9t4",
+        "template_8lwj7cq",
+        formRef.current,
+        "snDjN5aDpyFDX-FA_"
+      )
+      .then(
+        () => {
+          setStatus("✅ Message sent successfully!");
+          setLoading(false);
+          formRef.current.reset();
+        },
+        (error) => {
+          setStatus("❌ Failed to send message. Try again.");
+          setLoading(false);
+          console.error(error);
+        }
+      );
+  };
+
   return (
     <div className="bg-gray-50 text-gray-800">
-      {/* ================= HERO ================= */}
+      {/* HERO */}
       <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-24 px-8 text-center">
         <h1 className="text-5xl md:text-6xl font-extrabold mb-6">Contact Us</h1>
         <p className="max-w-3xl mx-auto text-lg md:text-xl">
@@ -12,7 +44,7 @@ export default function Contact() {
         </p>
       </section>
 
-      {/* ================= TRUST INDICATORS ================= */}
+      {/* TRUST */}
       <section className="bg-white py-12 px-8">
         <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
           <div className="p-6 rounded-xl bg-gray-50 shadow-md">
@@ -30,24 +62,15 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ================= CONTACT + MAP ================= */}
+      {/* FORM */}
       <section className="py-20 px-8 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16">
-          {/* LEFT: CONTACT FORM */}
           <div className="bg-white p-10 rounded-2xl shadow-xl">
             <h3 className="text-3xl font-bold mb-6 text-gray-900">
               Share Your Requirement
             </h3>
 
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              className="space-y-6"
-            >
-              {/* REQUIRED hidden field */}
-              <input type="hidden" name="form-name" value="contact" />
-
+            <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
               <input
                 type="text"
                 name="name"
@@ -87,10 +110,15 @@ export default function Contact() {
 
               <button
                 type="submit"
+                disabled={loading}
                 className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-bold hover:opacity-90 transition"
               >
-                Submit Request
+                {loading ? "Sending..." : "Submit Request"}
               </button>
+
+              {status && (
+                <p className="text-center text-sm font-medium">{status}</p>
+              )}
 
               <p className="text-xs text-gray-500 text-center">
                 All information will be kept confidential.
@@ -98,20 +126,17 @@ export default function Contact() {
             </form>
           </div>
 
-          {/* RIGHT: MAP + CONTACT DETAILS */}
+          {/* RIGHT SIDE */}
           <div className="space-y-8">
-            {/* Map */}
             <div className="rounded-2xl overflow-hidden shadow-xl border h-[350px]">
               <iframe
-                title="PsiBorg Location"
-                src="https://www.google.com/maps?q=Sector%20136%20Noida%20Uttar%20Pradesh&output=embed"
+                title="Location"
+                src="https://www.google.com/maps?q=Agra%20UP&output=embed"
                 className="w-full h-full border-0"
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
 
-            {/* Contact Details */}
             <div className="space-y-4">
               <div className="flex items-start gap-4 bg-white p-6 rounded-xl shadow-md">
                 <Phone className="w-6 h-6 text-blue-600 mt-1" />
@@ -144,55 +169,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
-      {/* ================= FAQ ================= */}
-      <section className="bg-white py-20 px-8">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-10">
-            Frequently Asked Questions
-          </h2>
-
-          <div className="space-y-6">
-            {[
-              {
-                q: "Do you sign an NDA before discussion?",
-                a: "Yes, all discussions are NDA protected to ensure confidentiality.",
-              },
-              {
-                q: "Do you offer end-to-end hardware development?",
-                a: "Yes, from idea validation to manufacturing support.",
-              },
-              {
-                q: "How long does it take to receive a quotation?",
-                a: "Typically within 2–4 business days.",
-              },
-              {
-                q: "Do you work with startups?",
-                a: "Yes, we collaborate with startups, SMEs, and enterprises.",
-              },
-            ].map((item, index) => (
-              <details
-                key={index}
-                className="bg-gray-50 p-6 rounded-xl shadow-md"
-              >
-                <summary className="font-semibold cursor-pointer">
-                  {item.q}
-                </summary>
-                <p className="mt-4 text-gray-700">{item.a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ================= FOOTER ================= */}
-      <footer className="bg-gray-900 text-white py-10 text-center text-sm">
-        <p>© 2025 NavniElectroTech . All Rights Reserved.</p>
-        <p className="mt-2">
-          6c/21-c, Azad Nagar Gali No-3 Agra, UP | +91-9634624084 |
-          NavniElectroTech.in
-        </p>
-      </footer>
     </div>
   );
 }
