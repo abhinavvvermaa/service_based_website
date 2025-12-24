@@ -51,7 +51,8 @@ export default function Home() {
   />
 
   {/* LEFT-ALIGNED TEXT */}
-<div className="absolute inset-0 flex items-start pt-24">
+<div className="absolute inset-0 flex items-start pt-36 md:pt-44 lg:pt-52">
+
   <div className="max-w-2xl px-12 text-white">
     <h1 className="text-3xl md:text-5xl font-extrabold mb-4">
       Cutting-edge <br />
@@ -203,7 +204,7 @@ export default function Home() {
       {/* ================= WHY CHOOSE ================= */}
       <section className="py-24 bg-gray-100 px-8">
         <h2 className="text-4xl font-bold text-center mb-16 animate-fade-up">
-          Why Choose NavniElectroTech?
+          Why Choose Navni ElectroTech?
         </h2>
 
         <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
@@ -314,11 +315,11 @@ export default function Home() {
       {/* ================= FOOTER ================= */}
       <footer className="bg-black text-gray-400 py-12 px-8 text-center text-sm">
         <p className="mb-2 text-white font-semibold">
-          © 2025 NavniElectroTech
+          © 2025 Navni ElectroTech
         </p>
         <p>
           6c/21-c, Azad Nagar Gali No-3 Agra, UP | +91-9634624084 |
-          NavniElectroTech.in
+          contact@navnielectrotech.com
         </p>
       </footer>
 

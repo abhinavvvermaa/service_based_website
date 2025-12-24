@@ -255,7 +255,7 @@ export default function Careers() {
                 <Phone className="w-5 h-5 text-blue-600" /> +91-9634624084
               </p>
               <p className="flex items-center gap-2 mt-2">
-                <Mail className="w-5 h-5 text-purple-600" /> NavniElectroTech
+                <Mail className="w-5 h-5 text-purple-600" /> contact@navnielectrotech.com
               </p>
             </div>
           </div>
@@ -264,10 +264,10 @@ export default function Careers() {
 
      {/* ================= FOOTER ================= */}
       <footer className="bg-gray-900 text-white py-10 text-center text-sm">
-        <p>© 2025 NavniElectroTech . All Rights Reserved.</p>
+        <p>© 2025 Navni ElectroTech . All Rights Reserved.</p>
         <p className="mt-2">
           6c/21-c, Azad Nagar Gali No-3 Agra, UP | +91-9634624084 |
-          NavniElectroTech.in
+          contact@navnielectrotech.com
         </p>
       </footer>
     </div>

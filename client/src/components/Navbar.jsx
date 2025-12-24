@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 
 // Logos
-import logo from "../assets/logo.png";             // Dark logo (white navbar)
-import white_logo from "../assets/White_Logo.png"; // White logo (transparent navbar)
+import logo from "../assets/logo.png";              // Dark logo (white navbar)
+import white_logo from "../assets/White_Logo.png";  // White logo (transparent navbar)
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -15,7 +15,7 @@ export default function Navbar() {
       setScrolled(window.scrollY > 50);
     };
 
-    handleScroll(); // run once on load
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -40,10 +40,10 @@ export default function Navbar() {
         }
       `}
     >
-      <nav className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-8 py-5 flex items-center">
 
-        {/* LOGO */}
-        <Link to="/" className="flex items-center">
+        {/* LOGO (LEFT) */}
+        <Link to="/" className="flex items-center z-10">
           <img
             src={!scrolled ? white_logo : logo}
             alt="Navni ElectroTech"
@@ -53,41 +53,31 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* DESKTOP MENU */}
-        <ul
-          className={`hidden md:flex items-center space-x-12 font-medium text-lg
-            ${!scrolled ? "text-white" : "text-gray-700"}
-          `}
-        >
-          {navItems.map((item) => (
-            <NavLink
-              key={item.name}
-              to={item.path}
-              className={({ isActive }) =>
-                `relative group transition ${
-                  isActive && scrolled ? "text-blue-600" : ""
-                }`
-              }
-            >
-              {item.name}
-              <span className="absolute left-0 -bottom-1 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full w-0"></span>
-            </NavLink>
-          ))}
-        </ul>
-
-        {/* CTA */}
-        <div className="hidden md:block">
-          <Link
-            to="/contact"
-            className="bg-gradient-to-r from-blue-600 to-purple-600
-                       text-white px-8 py-3 rounded-lg
-                       font-semibold text-lg hover:opacity-90 transition"
+        {/* CENTER MENU */}
+        <div className="flex-1 flex justify-center">
+          <ul
+            className={`hidden md:flex items-center space-x-12 font-medium text-lg
+              ${!scrolled ? "text-white" : "text-gray-700"}
+            `}
           >
-            Get Started
-          </Link>
+            {navItems.map((item) => (
+              <NavLink
+                key={item.name}
+                to={item.path}
+                className={({ isActive }) =>
+                  `relative group transition ${
+                    isActive && scrolled ? "text-blue-600" : ""
+                  }`
+                }
+              >
+                {item.name}
+                <span className="absolute left-0 -bottom-1 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full w-0"></span>
+              </NavLink>
+            ))}
+          </ul>
         </div>
 
-        {/* MOBILE MENU BUTTON */}
+        {/* MOBILE MENU BUTTON (RIGHT) */}
         <button
           className={`md:hidden text-3xl ${
             !scrolled ? "text-white" : "text-gray-800"

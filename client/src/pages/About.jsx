@@ -45,10 +45,10 @@ export default function About() {
         {/* HERO CONTENT */}
         <div className="relative z-10 py-28 px-8 text-center max-w-6xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
-            About NavniElectroTech
+            About Navni ElectroTech
           </h1>
           <p className="max-w-4xl mx-auto text-lg md:text-xl leading-relaxed text-white/90">
-            NavniElectroTech is an IoT company driven by innovation, science,
+            Navni ElectroTech is an IoT company driven by innovation, science,
             and the harmonious integration of humans and technology.
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function About() {
       {/* ================= MEANING SECTION ================= */}
       <section className="py-20 px-8 max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12">
-          What NavniElectroTech Means
+          What Navni ElectroTech Means
         </h2>
 
         <div className="grid md:grid-cols-2 gap-10">
@@ -139,10 +139,10 @@ export default function About() {
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-10">Our Journey</h2>
           <p className="leading-relaxed text-gray-700">
-            NavniElectroTech is a DPIIT-recognized startup with a passionate
+            Navni ElectroTech is a DPIIT-recognized startup with a passionate
             team of electronics engineers, firmware developers, and software
             experts. We identified a critical industry gap between hardware and
-            software teams—and built NavniElectroTech to bridge it under one
+            software teams—and built Navni ElectroTech to bridge it under one
             roof with excellence, speed, and rigorous testing.
           </p>
         </div>
@@ -204,10 +204,10 @@ export default function About() {
 
       {/* ================= FOOTER ================= */}
       <footer className="bg-gray-900 text-white py-10 text-center text-sm">
-        <p>© 2025 NavniElectroTech . All Rights Reserved.</p>
+        <p>© 2025 Navni ElectroTech . All Rights Reserved.</p>
         <p className="mt-2">
           6c/21-c, Azad Nagar Gali No-3 Agra, UP | +91-9634624084 |
-          NavniElectroTech.in
+          contact@navnielectrotech.com
         </p>
       </footer>
     </div>

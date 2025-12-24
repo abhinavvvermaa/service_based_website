@@ -7,7 +7,7 @@ import {
   Factory,
 } from "lucide-react";
 
-// Import local images
+// Images
 import hardwareImg from "../assets/services/hardware.avif";
 import pcbImg from "../assets/services/pcb.avif";
 import firmwareImg from "../assets/services/firmware.avif";
@@ -20,37 +20,37 @@ export default function Services() {
     {
       title: "Electronic Hardware Design",
       desc: "Complete electronic hardware design including schematics, component selection, power optimization, and system architecture for scalable products.",
-      icon: <Cpu className="w-10 h-10 text-blue-600" />,
+      icon: <Cpu className="w-10 h-10 text-blue-600 animate-float-soft" />,
       img: hardwareImg,
     },
     {
       title: "PCB Design & Layout",
       desc: "High-quality multi-layer PCB design ensuring signal integrity, EMI/EMC compliance, and manufacturability for production readiness.",
-      icon: <CircuitBoard className="w-10 h-10 text-purple-600" />,
+      icon: <CircuitBoard className="w-10 h-10 text-purple-600 animate-float-soft" />,
       img: pcbImg,
     },
     {
       title: "Firmware / Embedded Systems",
       desc: "Robust embedded firmware development for microcontrollers and SoCs with real-time performance and seamless hardware interaction.",
-      icon: <Code2 className="w-10 h-10 text-blue-600" />,
+      icon: <Code2 className="w-10 h-10 text-blue-600 animate-float-soft" />,
       img: firmwareImg,
     },
     {
       title: "Prototyping",
       desc: "Rapid prototyping to validate designs, minimize risks, and accelerate time-to-market with functional hardware units.",
-      icon: <Hammer className="w-10 h-10 text-purple-600" />,
+      icon: <Hammer className="w-10 h-10 text-purple-600 animate-float-soft" />,
       img: prototypeImg,
     },
     {
       title: "Testing & Validation",
       desc: "Comprehensive functional, environmental, and stress testing to ensure reliability, compliance, and long-term product performance.",
-      icon: <TestTube2 className="w-10 h-10 text-blue-600" />,
+      icon: <TestTube2 className="w-10 h-10 text-blue-600 animate-float-soft" />,
       img: testingImg,
     },
     {
       title: "Production & Manufacturing",
       desc: "Smooth transition from prototype to mass production with manufacturing support, quality assurance, and supply chain coordination.",
-      icon: <Factory className="w-10 h-10 text-purple-600" />,
+      icon: <Factory className="w-10 h-10 text-purple-600 animate-float-soft" />,
       img: manufacturingImg,
     },
   ];
@@ -58,20 +58,20 @@ export default function Services() {
   return (
     <div className="bg-gray-50 text-gray-800">
 
-      {/* Hero Section */}
+      {/* HERO */}
       <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-24 px-8 text-center">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-6 animate-fade-up">
           Our Services
         </h1>
-        <p className="max-w-4xl mx-auto text-lg md:text-xl">
+        <p className="max-w-4xl mx-auto text-lg md:text-xl animate-fade-up delay-200">
           End-to-end electronics and embedded engineering services — from concept
           to large-scale manufacturing.
         </p>
       </section>
 
-      {/* Services Grid */}
+      {/* SERVICES GRID */}
       <section className="py-20 px-8 max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-14 text-gray-900">
+        <h2 className="text-4xl font-bold text-center mb-14 text-gray-900 animate-fade-up">
           Engineering Excellence Under One Roof
         </h2>
 
@@ -79,13 +79,22 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition overflow-hidden"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden
+                         transition transform hover:-translate-y-3 hover:shadow-2xl
+                         animate-fade-up"
+              style={{ animationDelay: `${index * 120}ms` }}   // stagger
             >
-              <img
-                src={service.img}
-                alt={service.title}
-                className="h-48 w-full object-cover"
-              />
+              {/* IMAGE ZOOM */}
+              <div className="overflow-hidden">
+                <img
+                  src={service.img}
+                  alt={service.title}
+                  className="h-48 w-full object-cover
+                             transition-transform duration-700
+                             hover:scale-110"
+                />
+              </div>
+
               <div className="p-8">
                 <div className="mb-4">{service.icon}</div>
                 <h3 className="text-2xl font-semibold mb-3 text-gray-900">
@@ -100,12 +109,13 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* WHY CHOOSE */}
       <section className="bg-white py-20 px-8">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-12 text-gray-900">
+          <h2 className="text-4xl font-bold mb-12 animate-fade-up">
             Why Clients Trust Us
           </h2>
+
           <div className="grid md:grid-cols-3 gap-10">
             {[
               "End-to-end product ownership",
@@ -114,7 +124,9 @@ export default function Services() {
             ].map((text, i) => (
               <div
                 key={i}
-                className="bg-gray-50 p-8 rounded-xl shadow-md"
+                className="bg-gray-50 p-8 rounded-xl shadow-md
+                           animate-fade-up"
+                style={{ animationDelay: `${i * 150}ms` }}
               >
                 <p className="font-semibold text-lg text-blue-600">
                   {text}
@@ -127,31 +139,32 @@ export default function Services() {
 
       {/* CTA */}
       <section className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-20 px-8 text-center">
-        <h2 className="text-4xl font-bold mb-4">
+        <h2 className="text-4xl font-bold mb-4 animate-fade-up">
           Ready to Build Your Product?
         </h2>
-        <p className="max-w-2xl mx-auto mb-8 text-lg">
+        <p className="max-w-2xl mx-auto mb-8 text-lg animate-fade-up delay-200">
           Partner with our expert engineering team to transform your idea into a
           production-ready solution.
         </p>
         <a
           href="/contact"
-          className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:opacity-90 transition"
+          className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg
+                     font-bold hover:scale-105 transition-transform
+                     animate-fade-up delay-400"
         >
           Talk to Our Experts
         </a>
       </section>
 
-      {/* ================= FOOTER ================= */}
+      {/* FOOTER */}
       <footer className="bg-gray-900 text-white py-10 text-center text-sm">
-        <p>© 2025 NavniElectroTech . All Rights Reserved.</p>
+        <p>© 2025 Navni ElectroTech . All Rights Reserved.</p>
         <p className="mt-2">
           6c/21-c, Azad Nagar Gali No-3 Agra, UP | +91-9634624084 |
-          NavniElectroTech.in
+          contact@navnielectrotech.com
         </p>
       </footer>
 
     </div>
   );
 }
-
