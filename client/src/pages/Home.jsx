@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import heroBg from "../assets/home/electronics-hero.png";
+import heroBgDesktop from "../assets/home/Desktop.png";
+import heroBgMobile from "../assets/home/Mobile.png";
 import labImg from "../assets/home/lab.jpg";
 import pcbImg from "../assets/home/pcb.png";
 import embeddedImg from "../assets/home/embedded.avif";
@@ -36,46 +37,90 @@ import {
   Wifi,
   Code,
   Cloud,
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Instagram,
 } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="font-sans bg-gray-50 text-gray-800 overflow-hidden">
 
-     {/* ================= HERO SECTION ================= */}
-<section className="relative w-full aspect-[16/9] overflow-hidden">
-  <img
-    src={heroBg}
-    alt="Electronics Hero"
-    className="absolute inset-0 w-full h-full object-cover"
-  />
+    <section className="relative w-full overflow-hidden">
 
-  {/* LEFT-ALIGNED TEXT */}
-<div className="absolute inset-0 flex items-start pt-36 md:pt-44 lg:pt-52">
+  {/* ================= DESKTOP HERO ================= */}
+  <div className="relative hidden md:block h-screen">
+    <img
+      src={heroBgDesktop}
+      alt="Electronics Hero"
+      className="absolute inset-0 w-full h-full object-cover"
+    />
 
-  <div className="max-w-2xl px-12 text-white">
-    <h1 className="text-3xl md:text-5xl font-extrabold mb-4">
-      Cutting-edge <br />
-      Electronics Solutions
-    </h1>
+    <div className="absolute inset-0 bg-black/30"></div>
 
-    <p className="text-base md:text-lg mb-6">
-      Empowering your business with innovative
-      electronic and embedded systems
-    </p>
+    <div className="relative z-10 flex items-center h-full">
+      <div className="max-w-3xl px-16 text-white">
+        <h1 className="text-5xl lg:text-6xl font-extrabold mb-6">
+          Cutting-edge <br /> Electronics Solutions
+        </h1>
 
-    <Link
-      to="/contact"
-      className="inline-block bg-green-500 hover:bg-green-600
-                 text-white px-8 py-3 rounded-lg font-bold"
-    >
-      Get Started
-    </Link>
+        <p className="text-lg text-gray-200 mb-8">
+          Empowering your business with innovative electronic
+          and embedded systems
+        </p>
+
+        <Link
+          to="/contact"
+          className="inline-block bg-green-500 hover:bg-green-600 px-8 py-4 rounded-lg font-bold"
+        >
+          Get Started
+        </Link>
+      </div>
+    </div>
   </div>
-</div>
 
+  {/* ================= MOBILE HERO ================= */}
+  <div className="relative md:hidden h-[90vh]">
+
+    {/* IMAGE */}
+    <img
+      src={heroBgMobile}
+      alt="Electronics PCB"
+      className="
+        absolute inset-0
+        w-full h-full
+        object-cover
+        object-[center_top]
+      "
+    />
+
+    {/* GRADIENT FOR READABILITY */}
+    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80"></div>
+
+    {/* TEXT ON IMAGE — BELOW PCB */}
+    <div className="absolute bottom-12 left-0 right-0 px-6 text-center text-white">
+      <h1 className="text-xl font-semibold leading-snug mb-3">
+        Cutting-edge Electronics Solutions
+      </h1>
+
+      <p className="text-xs text-gray-200 leading-relaxed mb-5">
+        Empowering your business with innovative electronic
+        and embedded systems
+      </p>
+
+      <Link
+        to="/contact"
+        className="inline-block bg-green-500 px-5 py-2.5 rounded-md text-sm font-semibold"
+      >
+        Get Started
+      </Link>
+    </div>
+  </div>
 
 </section>
+
 
 
      {/* ================= END-TO-END IOT STACK ================= */}
@@ -91,12 +136,12 @@ export default function Home() {
 
   <div className="relative z-10 max-w-7xl mx-auto">
     <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-6">
-      End-to-End IoT Architecture
+      End-to-End Electronic Hardware Design
     </h2>
 
     <p className="text-center text-gray-300 max-w-4xl mx-auto mb-20 text-lg">
-      A seamless chip-to-cloud ecosystem where hardware, firmware,
-      connectivity, applications, and data intelligence work together.
+      Your single-source partner for seamless electronic hardware development, firmware, connectivity, applications,
+      and cloud integration. 
     </p>
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-14 items-center">
@@ -111,7 +156,7 @@ export default function Home() {
             Hardware & Sensor Integration
           </h3>
           <p className="text-gray-400 text-sm">
-            Custom electronics, PCB design, sensors, actuators,
+            Custom PCB design, sensor integration,
             and production-grade hardware.
           </p>
         </div>
@@ -121,11 +166,10 @@ export default function Home() {
                         animate-float-reverse">
           <Code className="w-10 h-10 text-purple-500 mb-4 animate-led" />
           <h3 className="text-xl font-bold mb-2">
-            End Applications (Mobile / Web)
+            User Applications (Mobile / Web)
           </h3>
           <p className="text-gray-400 text-sm">
-            Mobile apps and dashboards built for usability
-            and operational control.
+            Custom mobile apps and dashboards for control & monitoring.
           </p>
         </div>
       </div>
@@ -137,7 +181,7 @@ export default function Home() {
                         animate-float-slow animate-led">
           <h3 className="text-3xl font-extrabold mb-2">Firmware</h3>
           <p className="text-sm text-gray-200 max-w-xs mx-auto">
-            Embedded logic, RTOS, device intelligence & real-time control
+            Embedded logic, RTOS, real-time control & device intelligence
           </p>
 
           {/* blinking connectors */}
@@ -155,10 +199,10 @@ export default function Home() {
                         animate-float-reverse">
           <Wifi className="w-10 h-10 text-blue-500 mb-4 animate-signal" />
           <h3 className="text-xl font-bold mb-2">
-            Connectivity Protocols
+            Connectivity Solutions
           </h3>
           <p className="text-gray-400 text-sm">
-            Wi-Fi, BLE, Zigbee, LoRa, LTE, MQTT
+            Wi-Fi, BLE, Zigbee, LoRa, LTE
             with secure communication.
           </p>
         </div>
@@ -168,11 +212,10 @@ export default function Home() {
                         animate-float-slow">
           <Cloud className="w-10 h-10 text-purple-500 mb-4 animate-led" />
           <h3 className="text-xl font-bold mb-2">
-            Data Processing (Edge / Cloud)
+            Cloud Data Processing
           </h3>
           <p className="text-gray-400 text-sm">
-            Edge analytics, cloud dashboards, alerts,
-            and AI-ready pipelines.
+            Cloud based analytics, remote monitoring, and data processing.
           </p>
         </div>
       </div>
@@ -313,15 +356,129 @@ export default function Home() {
       </section>
 
       {/* ================= FOOTER ================= */}
-      <footer className="bg-black text-gray-400 py-12 px-8 text-center text-sm">
-        <p className="mb-2 text-white font-semibold">
-          © 2025 Navni ElectroTech
-        </p>
-        <p>
-          6c/21-c, Azad Nagar Gali No-3 Agra, UP | +91-9634624084 |
-          contact@navnielectrotech.com
-        </p>
-      </footer>
+<footer className="bg-black text-gray-400 pt-20 pb-10 px-6">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+    {/* COMPANY INFO */}
+    <div>
+      <h3 className="text-white text-2xl font-bold mb-4">
+        Navni ElectroTech
+      </h3>
+      <p className="text-sm mb-6">
+        Innovating electronic hardware & embedded solutions
+        since 2018.
+      </p>
+
+      {/* SOCIAL ICONS */}
+      <div className="flex gap-4">
+        <a href="https://www.facebook.com/share/1BnPRozJaw/" className="hover:text-blue-500 transition">
+          <Facebook />
+        </a>
+        <a href="https://www.instagram.com/navnielectrotech?igsh=bmIzM3c0ODV1bThm" className="hover:text-pink-500 transition">
+          <Instagram />
+        </a>
+      </div>
+    </div>
+
+    {/* SERVICES */}
+    <div>
+      <h4 className="text-white font-semibold mb-4">Services</h4>
+      <ul className="space-y-2 text-sm">
+        <li>Electronic Hardware Design</li>
+        <li>PCB Design Services</li>
+        <li>Embedded Firmware</li>
+        <li>IoT Product Development</li>
+        <li>Cloud Integration</li>
+      </ul>
+    </div>
+
+    {/* CONTACT */}
+<div>
+  <h4 className="text-white font-semibold mb-4">Contact</h4>
+
+  <div className="flex items-start gap-3 mb-3">
+    <Phone size={18} />
+    <span className="text-sm">+91-9634624084</span>
+  </div>
+
+  <div className="flex items-start gap-3 mb-3">
+    <Mail size={18} />
+    <span className="text-sm">contact@navnielectrotech.com</span>
+  </div>
+
+  <div className="flex items-start gap-3 mb-4">
+    <MapPin size={18} />
+    <span className="text-sm">
+      6c/21-c, Azad Nagar Gali No-3,<br />
+      Agra, Uttar Pradesh
+    </span>
+  </div>
+
+  {/* MAP */}
+  <a
+    href="https://www.google.com/maps?q=6c/21-c,+Azad+Nagar+Gali+No-3,+Agra,+Uttar+Pradesh"
+    target="_blank"
+    rel="noreferrer"
+  >
+    <iframe
+      title="Navni ElectroTech Location"
+      src="https://www.google.com/maps?q=6c/21-c,+Azad+Nagar+Gali+No-3,+Agra,+Uttar+Pradesh&output=embed"
+      className="w-full h-32 rounded-xl border border-gray-700 hover:opacity-90 transition"
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    />
+  </a>
+</div>
+
+
+    {/* QUICK LINKS */}
+    <div>
+      <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+      <ul className="space-y-2 text-sm">
+        <li>
+          <Link to="/about" className="hover:text-white transition">
+            About Us
+          </Link>
+        </li>
+        <li>
+          <Link to="/services" className="hover:text-white transition">
+            Services
+          </Link>
+        </li>
+        <li>
+          <Link to="/career" className="hover:text-white transition">
+            Careers
+          </Link>
+        </li>
+        <li>
+          <Link to="/contact" className="hover:text-white transition">
+            Contact
+          </Link>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  {/* BOTTOM BAR */}
+  <div className="border-t border-gray-800 mt-12 pt-6 text-center text-sm">
+    <p className="text-gray-500">
+      © 2025 Navni ElectroTech. All rights reserved.
+    </p>
+
+    <div className="flex justify-center gap-6 mt-3">
+      <Link to="/privacy" className="hover:text-white">
+        Privacy Policy
+      </Link>
+      <Link to="/terms&conditions" className="hover:text-white">
+        Terms & Conditions
+      </Link>
+      <Link to="/contact" className="hover:text-white">
+        Contact Us
+      </Link>
+    </div>
+  </div>
+</footer>
+
 
     </div>
   );

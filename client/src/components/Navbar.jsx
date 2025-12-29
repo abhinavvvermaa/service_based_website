@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
 
 // Logos
 import logo from "../assets/logo.png";              // Dark logo (white navbar)
 import white_logo from "../assets/White_Logo.png";  // White logo (transparent navbar)
 
 export default function Navbar() {
+   const location = useLocation(); // ✅ ADD THIS
+
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -19,6 +23,11 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Hide navbar on privacy policy page
+  if (location.pathname === "/privacy-policy") {
+    return null;
+  }
 
   const navItems = [
     { name: "Home", path: "/" },

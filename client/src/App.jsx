@@ -5,6 +5,8 @@ import Services from "./pages/Services";
 import Solutions from "./pages/Solutions";
 import Career from "./pages/Career";
 import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms&conditions" element={<TermsAndConditions />} />
       </Routes>
     </BrowserRouter>
   );
