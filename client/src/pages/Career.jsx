@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { Briefcase, MapPin, Clock, ArrowRight, Facebook,Instagram,Phone,Mail} from "lucide-react";
+import {
+  Briefcase,
+  MapPin,
+  Clock,
+  ArrowRight,
+  Facebook,
+  Instagram,
+  Phone,
+  Mail,
+} from "lucide-react";
 
 export default function Careers() {
   const [showModal, setShowModal] = useState(false);
@@ -131,11 +140,20 @@ export default function Careers() {
 
       {/* ================= APPLY MODAL ================= */}
       {showModal && selectedJob && (
-        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
-          <div className="bg-white w-full max-w-2xl rounded-xl p-6 relative max-h-[85vh] overflow-y-auto">
+        <div className="fixed inset-0 z-50 bg-black/60 flex items-end md:items-center justify-center">
+          <div
+            className="
+    bg-white w-full md:max-w-2xl
+    rounded-t-2xl md:rounded-xl
+    p-5 md:p-6
+    relative
+    max-h-[90vh]
+    overflow-y-auto
+  "
+          >
             <button
               onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 text-2xl text-gray-500 hover:text-black"
+              className="absolute top-3 right-3 text-3xl text-gray-600 hover:text-black"
             >
               ×
             </button>
@@ -148,7 +166,7 @@ export default function Careers() {
             <form
               ref={formRef}
               onSubmit={sendApplication}
-              className="grid md:grid-cols-2 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2 gap-5"
             >
               {/* COMMON FIELDS */}
               <input name="job_title" type="hidden" value={selectedJob.title} />
@@ -159,17 +177,30 @@ export default function Careers() {
                 className="border-b p-2 outline-none"
               />
               <input
+                type="email"
                 name="email"
                 placeholder="Email *"
                 required
+                pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                title="Please enter a valid email address"
                 className="border-b p-2 outline-none"
               />
+
               <input
+                type="tel"
                 name="phone"
                 placeholder="Phone *"
                 required
+                pattern="[0-9]{10}"
+                inputMode="numeric"
+                maxLength="10"
+                title="Please enter a valid 10-digit phone number"
+                onInput={(e) => {
+                  e.target.value = e.target.value.replace(/[^0-9]/g, "");
+                }}
                 className="border-b p-2 outline-none"
               />
+
               <input
                 name="qualification"
                 placeholder="Qualification *"
@@ -184,6 +215,13 @@ export default function Careers() {
                     name="year_of_passing"
                     placeholder="Year of Passing *"
                     required
+                    pattern="[0-9]{4}"
+                    inputMode="numeric"
+                    maxLength="4"
+                    title="Enter valid year (e.g. 2024)"
+                    onInput={(e) => {
+                      e.target.value = e.target.value.replace(/[^0-9]/g, "");
+                    }}
                     className="border-b p-2 outline-none col-span-2"
                   />
 
@@ -205,14 +243,28 @@ export default function Careers() {
                     name="current_salary"
                     placeholder="Current Salary *"
                     required
+                    inputMode="numeric"
+                    pattern="[0-9]+"
+                    title="Numbers only"
+                    onInput={(e) => {
+                      e.target.value = e.target.value.replace(/[^0-9]/g, "");
+                    }}
                     className="border-b p-2 outline-none"
                   />
+
                   <input
                     name="expected_salary"
                     placeholder="Expected Salary *"
                     required
+                    inputMode="numeric"
+                    pattern="[0-9]+"
+                    title="Numbers only"
+                    onInput={(e) => {
+                      e.target.value = e.target.value.replace(/[^0-9]/g, "");
+                    }}
                     className="border-b p-2 outline-none"
                   />
+
                   <input
                     name="notice_period"
                     placeholder="Notice Period *"
@@ -220,7 +272,7 @@ export default function Careers() {
                     className="border-b p-2 outline-none"
                   />
 
-                  <div className="col-span-2">
+                  <div className="col-span-1 md:col-span-2">
                     <p className="mb-2 font-medium">
                       Are you comfortable for Noida Location? *
                     </p>
@@ -242,6 +294,9 @@ export default function Careers() {
                     name="total_experience"
                     placeholder="Total Work Experience *"
                     required
+                    inputMode="decimal"
+                    pattern="^[0-9]+(\.[0-9]+)?$"
+                    title="Enter experience in years (e.g. 1 or 1.5)"
                     className="border-b p-2 outline-none col-span-2"
                   />
 
@@ -259,8 +314,11 @@ export default function Careers() {
               <input
                 name="resume_link"
                 placeholder="Resume Link (Google Drive) *"
-                className="border-b p-2 outline-none col-span-2"
                 required
+                type="url"
+                pattern="https?://.*"
+                title="Please enter a valid Google Drive link"
+                className="border-b p-2 outline-none col-span-2"
               />
 
               <p className="text-xs text-gray-500 col-span-2">
@@ -270,8 +328,19 @@ export default function Careers() {
 
               <button
                 type="submit"
-                className="col-span-2 bg-yellow-400 hover:bg-yellow-500
-                           text-black py-3 rounded-lg font-bold"
+                className="
+    col-span-2
+    inline-flex items-center justify-center gap-3
+    px-10 py-3
+    rounded-full
+    font-semibold text-white
+    bg-gradient-to-r from-blue-600 to-purple-600
+    shadow-lg
+    transition-all duration-300
+    hover:from-blue-700 hover:to-purple-700
+    hover:scale-105
+    active:scale-95
+  "
               >
                 Apply
               </button>
@@ -289,15 +358,21 @@ export default function Careers() {
               Navni ElectroTech
             </h3>
             <p className="text-sm mb-6">
-              Innovating electronic hardware & embedded solutions since 2018.
+              Transforming ideas into production-ready electronic solutions.
             </p>
 
             {/* SOCIAL ICONS */}
             <div className="flex gap-4">
-              <a href="https://www.facebook.com/share/1BnPRozJaw/" className="hover:text-blue-500 transition">
+              <a
+                href="https://www.facebook.com/share/1BnPRozJaw/"
+                className="hover:text-blue-500 transition"
+              >
                 <Facebook />
               </a>
-              <a href="https://www.instagram.com/navnielectrotech?igsh=bmIzM3c0ODV1bThm" className="hover:text-pink-500 transition">
+              <a
+                href="https://www.instagram.com/navnielectrotech?igsh=bmIzM3c0ODV1bThm"
+                className="hover:text-pink-500 transition"
+              >
                 <Instagram />
               </a>
             </div>

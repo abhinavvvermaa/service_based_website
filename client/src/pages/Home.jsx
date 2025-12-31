@@ -60,25 +60,30 @@ export default function Home() {
 
     <div className="absolute inset-0 bg-black/30"></div>
 
-    <div className="relative z-10 flex items-center h-full">
-      <div className="max-w-3xl px-16 text-white">
-        <h1 className="text-5xl lg:text-6xl font-extrabold mb-6">
-          Cutting-edge <br /> Electronics Solutions
-        </h1>
+   <div className="relative z-10 h-full flex items-center">
+  <div className="max-w-7xl mx-auto px-8 w-full">
+    <div className="max-w-3xl text-white text-left">
 
-        <p className="text-lg text-gray-200 mb-8">
-          Empowering your business with innovative electronic
-          and embedded systems
-        </p>
+      <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+        Cutting-edge <br /> Electronics Solutions
+      </h1>
 
-        <Link
-          to="/contact"
-          className="inline-block bg-green-500 hover:bg-green-600 px-8 py-4 rounded-lg font-bold"
-        >
-          Get Started
-        </Link>
-      </div>
+      <p className="text-lg text-gray-200 mb-8">
+        Empowering your business with innovative electronic
+        and embedded systems
+      </p>
+
+      <Link
+        to="/contact"
+        className="inline-block bg-green-500 hover:bg-green-600 px-8 py-4 rounded-lg font-bold"
+      >
+        Get Started
+      </Link>
+
     </div>
+  </div>
+</div>
+
   </div>
 
   {/* ================= MOBILE HERO ================= */}
@@ -365,8 +370,7 @@ export default function Home() {
         Navni ElectroTech
       </h3>
       <p className="text-sm mb-6">
-        Innovating electronic hardware & embedded solutions
-        since 2018.
+        Transforming ideas into production-ready electronic solutions.
       </p>
 
       {/* SOCIAL ICONS */}

@@ -171,8 +171,7 @@ export default function Services() {
         Navni ElectroTech
       </h3>
       <p className="text-sm mb-6">
-        Innovating electronic hardware & embedded solutions
-        since 2018.
+        Transforming ideas into production-ready electronic solutions.
       </p>
 
       {/* SOCIAL ICONS */}

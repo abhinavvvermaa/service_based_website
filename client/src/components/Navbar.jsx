@@ -57,7 +57,7 @@ export default function Navbar() {
             src={!scrolled ? white_logo : logo}
             alt="Navni ElectroTech"
             className={`transition-all duration-300 ${
-              !scrolled ? "h-9 drop-shadow-lg" : "h-8"
+              !scrolled ? "h-9 drop-shadow-lg" : "h-9"
             } w-auto`}
           />
         </Link>
