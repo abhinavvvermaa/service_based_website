@@ -163,188 +163,200 @@ export default function Careers() {
             </h2>
 
             {/* ================= FORM ================= */}
-            <form
-              ref={formRef}
-              onSubmit={sendApplication}
-              className="grid grid-cols-1 md:grid-cols-2 gap-5"
-            >
-              {/* COMMON FIELDS */}
-              <input name="job_title" type="hidden" value={selectedJob.title} />
-              <input
-                name="name"
-                placeholder="Name *"
-                required
-                className="border-b p-2 outline-none"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email *"
-                required
-                pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
-                title="Please enter a valid email address"
-                className="border-b p-2 outline-none"
-              />
+         <form
+  ref={formRef}
+  onSubmit={sendApplication}
+  className="grid grid-cols-1 md:grid-cols-2 gap-5"
+>
+  {/* JOB TITLE */}
+  <input name="job_title" type="hidden" value={selectedJob.title} />
 
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone *"
-                required
-                pattern="[0-9]{10}"
-                inputMode="numeric"
-                maxLength="10"
-                title="Please enter a valid 10-digit phone number"
-                onInput={(e) => {
-                  e.target.value = e.target.value.replace(/[^0-9]/g, "");
-                }}
-                className="border-b p-2 outline-none"
-              />
+  {/* NAME */}
+  <input
+    name="name"
+    placeholder="Name *"
+    required
+    className="border-b p-3 outline-none w-full"
+  />
 
-              <input
-                name="qualification"
-                placeholder="Qualification *"
-                required
-                className="border-b p-2 outline-none"
-              />
+  {/* EMAIL */}
+  <input
+    type="email"
+    name="email"
+    placeholder="Email *"
+    required
+    pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+    title="Please enter a valid email address"
+    className="border-b p-3 outline-none w-full"
+  />
 
-              {/* ===== FRESHER EXTRA ===== */}
-              {selectedJob.type === "fresher" && (
-                <>
-                  <input
-                    name="year_of_passing"
-                    placeholder="Year of Passing *"
-                    required
-                    pattern="[0-9]{4}"
-                    inputMode="numeric"
-                    maxLength="4"
-                    title="Enter valid year (e.g. 2024)"
-                    onInput={(e) => {
-                      e.target.value = e.target.value.replace(/[^0-9]/g, "");
-                    }}
-                    className="border-b p-2 outline-none col-span-2"
-                  />
+  {/* PHONE */}
+  <input
+    type="tel"
+    name="phone"
+    placeholder="Phone *"
+    required
+    pattern="[0-9]{10}"
+    inputMode="numeric"
+    maxLength="10"
+    title="Enter 10-digit phone number"
+    onInput={(e) =>
+      (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
+    }
+    className="border-b p-3 outline-none w-full"
+  />
 
-                  <div className="col-span-2 bg-gray-50 p-4 rounded-lg text-sm">
-                    <strong>Note:</strong> If work performance is good, a
-                    stipend of{" "}
-                    <span className="font-semibold text-green-600">
-                      ₹10,000 per month
-                    </span>{" "}
-                    will be provided.
-                  </div>
-                </>
-              )}
+  {/* QUALIFICATION */}
+  <input
+    name="qualification"
+    placeholder="Qualification *"
+    required
+    className="border-b p-3 outline-none w-full"
+  />
 
-              {/* ===== EXPERIENCED EXTRA ===== */}
-              {selectedJob.type === "experienced" && (
-                <>
-                  <input
-                    name="current_salary"
-                    placeholder="Current Salary *"
-                    required
-                    inputMode="numeric"
-                    pattern="[0-9]+"
-                    title="Numbers only"
-                    onInput={(e) => {
-                      e.target.value = e.target.value.replace(/[^0-9]/g, "");
-                    }}
-                    className="border-b p-2 outline-none"
-                  />
+  {/* ================= FRESHER ================= */}
+  {selectedJob.type === "fresher" && (
+    <>
+      <input
+        name="year_of_passing"
+        placeholder="Year of Passing *"
+        required
+        inputMode="numeric"
+        maxLength="4"
+        pattern="[0-9]{4}"
+        title="Enter valid year"
+        onInput={(e) =>
+          (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
+        }
+        className="border-b p-3 outline-none col-span-1 md:col-span-2"
+      />
 
-                  <input
-                    name="expected_salary"
-                    placeholder="Expected Salary *"
-                    required
-                    inputMode="numeric"
-                    pattern="[0-9]+"
-                    title="Numbers only"
-                    onInput={(e) => {
-                      e.target.value = e.target.value.replace(/[^0-9]/g, "");
-                    }}
-                    className="border-b p-2 outline-none"
-                  />
+      <div className="col-span-1 md:col-span-2 bg-gray-50 p-4 rounded-lg text-sm">
+        <strong>Note:</strong> If work performance is good, a stipend of{" "}
+        <span className="font-semibold text-green-600">
+          ₹10,000 per month
+        </span>{" "}
+        will be provided.
+      </div>
+    </>
+  )}
 
-                  <input
-                    name="notice_period"
-                    placeholder="Notice Period *"
-                    required
-                    className="border-b p-2 outline-none"
-                  />
+  {/* ================= EXPERIENCED ================= */}
+  {selectedJob.type === "experienced" && (
+    <>
+      <input
+        name="current_salary"
+        placeholder="Current Salary *"
+        required
+        inputMode="numeric"
+        onInput={(e) =>
+          (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
+        }
+        className="border-b p-3 outline-none w-full"
+      />
 
-                  <div className="col-span-1 md:col-span-2">
-                    <p className="mb-2 font-medium">
-                      Are you comfortable for Noida Location? *
-                    </p>
-                    <label className="mr-4">
-                      <input
-                        type="radio"
-                        name="relocate"
-                        value="Yes"
-                        required
-                      />{" "}
-                      Yes
-                    </label>
-                    <label>
-                      <input type="radio" name="relocate" value="No" /> No
-                    </label>
-                  </div>
+      <input
+        name="expected_salary"
+        placeholder="Expected Salary *"
+        required
+        inputMode="numeric"
+        onInput={(e) =>
+          (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
+        }
+        className="border-b p-3 outline-none w-full"
+      />
 
-                  <input
-                    name="total_experience"
-                    placeholder="Total Work Experience *"
-                    required
-                    inputMode="decimal"
-                    pattern="^[0-9]+(\.[0-9]+)?$"
-                    title="Enter experience in years (e.g. 1 or 1.5)"
-                    className="border-b p-2 outline-none col-span-2"
-                  />
+      <input
+        name="notice_period"
+        placeholder="Notice Period *"
+        required
+        className="border-b p-3 outline-none w-full"
+      />
 
-                  <textarea
-                    name="relevant_experience"
-                    rows="3"
-                    className="border-b p-2 outline-none col-span-2"
-                    placeholder="Relevant Experience *"
-                    required
-                  />
-                </>
-              )}
+      {/* NOIDA LOCATION */}
+      <div className="col-span-1 md:col-span-2">
+        <p className="mb-3 font-medium text-gray-700">
+          Are you comfortable for Noida Location? *
+        </p>
 
-              {/* RESUME LINK */}
-              <input
-                name="resume_link"
-                placeholder="Resume Link (Google Drive) *"
-                required
-                type="url"
-                pattern="https?://.*"
-                title="Please enter a valid Google Drive link"
-                className="border-b p-2 outline-none col-span-2"
-              />
+        <div className="flex gap-6">
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="radio"
+              name="relocate"
+              value="Yes"
+              required
+              className="accent-blue-600"
+            />
+            <span>Yes</span>
+          </label>
 
-              <p className="text-xs text-gray-500 col-span-2">
-                Please ensure the Google Drive link is set to
-                <strong> “Anyone with the link can view”</strong>.
-              </p>
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="radio"
+              name="relocate"
+              value="No"
+              className="accent-blue-600"
+            />
+            <span>No</span>
+          </label>
+        </div>
+      </div>
 
-              <button
-                type="submit"
-                className="
-    col-span-2
-    inline-flex items-center justify-center gap-3
-    px-10 py-3
-    rounded-full
-    font-semibold text-white
-    bg-gradient-to-r from-blue-600 to-purple-600
-    shadow-lg
-    transition-all duration-300
-    hover:from-blue-700 hover:to-purple-700
-    hover:scale-105
-    active:scale-95
-  "
-              >
-                Apply
-              </button>
-            </form>
+      <input
+        name="total_experience"
+        placeholder="Total Work Experience (Years) *"
+        required
+        inputMode="decimal"
+        pattern="^[0-9]+(\.[0-9]+)?$"
+        className="border-b p-3 outline-none col-span-1 md:col-span-2"
+      />
+
+      <textarea
+        name="relevant_experience"
+        rows="3"
+        placeholder="Relevant Experience *"
+        required
+        className="border-b p-3 outline-none col-span-1 md:col-span-2"
+      />
+    </>
+  )}
+
+  {/* RESUME */}
+  <input
+    name="resume_link"
+    placeholder="Resume Link (Google Drive) *"
+    required
+    type="url"
+    className="border-b p-3 outline-none col-span-1 md:col-span-2"
+  />
+
+  <p className="text-xs text-gray-500 col-span-1 md:col-span-2">
+    Please ensure the Google Drive link is set to{" "}
+    <strong>“Anyone with the link can view”</strong>.
+  </p>
+
+  {/* SUBMIT BUTTON */}
+  <button
+    type="submit"
+    className="
+      col-span-1 md:col-span-2
+      inline-flex items-center justify-center gap-3
+      px-10 py-3
+      rounded-full
+      font-semibold text-white
+      bg-gradient-to-r from-blue-600 to-purple-600
+      shadow-lg
+      transition-all duration-300
+      hover:from-blue-700 hover:to-purple-700
+      hover:scale-105
+      active:scale-95
+    "
+  >
+    Apply
+  </button>
+</form>
+
           </div>
         </div>
       )}

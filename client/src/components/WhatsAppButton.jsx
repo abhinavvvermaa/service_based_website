@@ -11,6 +11,15 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noreferrer"
       aria-label="Chat on WhatsApp"
+      /*tracking */
+      onClick={() => {
+        if (window.gtag) {
+          window.gtag("event", "whatsapp_click", {
+            event_category: "engagement",
+            event_label: "whatsapp_floating_button",
+          });
+        }
+      }}
       className="
         fixed
         bottom-6

@@ -270,6 +270,7 @@ export default function Contact() {
               href="https://www.google.com/maps?q=6c/21-c,+Azad+Nagar+Gali+No-3,+Agra,+Uttar+Pradesh"
               target="_blank"
               rel="noreferrer"
+              
             >
               <iframe
                 title="Navni ElectroTech Location"
