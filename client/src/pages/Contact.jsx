@@ -40,13 +40,60 @@ export default function Contact() {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* ================= HERO ================= */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-24 px-8 text-center">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-6">Contact Us</h1>
-        <p className="max-w-3xl mx-auto text-lg md:text-xl">
-          Share your idea with us. Our experts will help you turn it into a
-          scalable and reliable product.
-        </p>
-      </section>
+      {/* ================= HERO (ABOUT STYLE) ================= */}
+<section className="relative overflow-hidden text-white">
+  {/* Base Gradient */}
+  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-fuchsia-500" />
+
+  {/* Wave Layer 1 */}
+  <svg
+    className="absolute inset-0 w-full h-full"
+    viewBox="0 0 1440 600"
+    preserveAspectRatio="none"
+  >
+    <path
+      fill="rgba(255,255,255,0.14)"
+      d="M0,220 C240,320 480,120 720,180 960,240 1200,340 1440,200 L1440,0 L0,0 Z"
+    />
+  </svg>
+
+  {/* Wave Layer 2 */}
+  <svg
+    className="absolute inset-0 w-full h-full"
+    viewBox="0 0 1440 600"
+    preserveAspectRatio="none"
+  >
+    <path
+      fill="rgba(255,255,255,0.1)"
+      d="M0,320 C300,240 600,380 900,300 1200,220 1380,300 1440,340 L1440,0 L0,0 Z"
+    />
+  </svg>
+
+  {/* Wave Layer 3 */}
+  <svg
+    className="absolute inset-0 w-full h-full"
+    viewBox="0 0 1440 600"
+    preserveAspectRatio="none"
+  >
+    <path
+      fill="rgba(255,255,255,0.07)"
+      d="M0,420 C260,380 520,420 780,400 1040,380 1200,420 1440,390 L1440,0 L0,0 Z"
+    />
+  </svg>
+
+  {/* CONTENT */}
+  <div className="relative z-10 max-w-6xl mx-auto px-8 py-24 text-center">
+    <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
+      Contact Us
+    </h1>
+
+    <p className="max-w-4xl mx-auto text-lg md:text-xl text-white/90">
+      Share your idea with us. Our experts will help you turn it into a
+      scalable and reliable product.
+    </p>
+  </div>
+</section>
+
 
       {/* ================= TRUST INDICATORS ================= */}
       <section className="bg-white py-12 px-8">

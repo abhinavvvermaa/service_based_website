@@ -1,33 +1,51 @@
-import { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-
+import { useState, useEffect, useRef } from "react";
+import { NavLink, Link, useLocation } from "react-router-dom";
 
 // Logos
-import logo from "../assets/logo.png";              // Dark logo (white navbar)
-import white_logo from "../assets/White_Logo.png";  // White logo (transparent navbar)
+import logo from "../assets/logo.png";
+import white_logo from "../assets/White_Logo.png";
 
 export default function Navbar() {
-   const location = useLocation(); // ✅ ADD THIS
+  const location = useLocation();
+  const menuRef = useRef(null);
 
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Scroll detection (for ALL pages)
+  /* ================= SCROLL HANDLER ================= */
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+
+      // Close mobile menu on scroll
+      if (open) setOpen(false);
     };
 
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [open]);
 
-  // Hide navbar on privacy policy page
-  if (location.pathname === "/privacy-policy") {
-    return null;
-  }
+  /* ================= CLOSE ON ROUTE CHANGE ================= */
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+
+  /* ================= CLOSE ON OUTSIDE TOUCH ================= */
+  useEffect(() => {
+    if (!open) return;
+
+    const handleTouch = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("touchstart", handleTouch);
+    return () => document.removeEventListener("touchstart", handleTouch);
+  }, [open]);
+
+  // Hide navbar on privacy page (if needed)
+  if (location.pathname === "/privacy-policy") return null;
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -50,19 +68,16 @@ export default function Navbar() {
       `}
     >
       <nav className="max-w-7xl mx-auto px-8 py-5 flex items-center">
-
-        {/* LOGO (LEFT) */}
+        {/* LOGO */}
         <Link to="/" className="flex items-center z-10">
           <img
             src={!scrolled ? white_logo : logo}
             alt="Navni ElectroTech"
-            className={`transition-all duration-300 ${
-              !scrolled ? "h-9 drop-shadow-lg" : "h-9"
-            } w-auto`}
+            className="h-9 w-auto transition-all duration-300"
           />
         </Link>
 
-        {/* CENTER MENU */}
+        {/* DESKTOP MENU */}
         <div className="flex-1 flex justify-center">
           <ul
             className={`hidden md:flex items-center space-x-12 font-medium text-lg
@@ -73,42 +88,50 @@ export default function Navbar() {
               <NavLink
                 key={item.name}
                 to={item.path}
-                className={({ isActive }) =>
-                  `relative group transition ${
-                    isActive && scrolled ? "text-blue-600" : ""
-                  }`
-                }
+                className="relative group"
               >
                 {item.name}
-                <span className="absolute left-0 -bottom-1 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full w-0"></span>
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-blue-600 to-purple-600 transition-all group-hover:w-full" />
               </NavLink>
             ))}
           </ul>
         </div>
 
-        {/* MOBILE MENU BUTTON (RIGHT) */}
+        {/* MOBILE BUTTON */}
         <button
           className={`md:hidden text-3xl ${
             !scrolled ? "text-white" : "text-gray-800"
           }`}
-          onClick={() => setOpen(!open)}
+          onClick={() => setOpen((prev) => !prev)}
         >
           ☰
         </button>
       </nav>
 
-      {/* MOBILE MENU */}
+      {/* ================= MOBILE MENU ================= */}
       {open && (
-        <div className="md:hidden bg-white shadow-lg">
-          <ul className="flex flex-col px-8 py-6 space-y-6 font-medium text-lg text-gray-700">
+        <div
+          ref={menuRef}
+          className={`
+            md:hidden transition-all duration-300
+            ${
+              scrolled
+                ? "bg-white shadow-lg"
+                : "bg-gray-900/60 backdrop-blur-xl"
+            }
+          `}
+        >
+          <ul
+            className={`flex flex-col px-8 py-6 space-y-6 font-medium text-lg
+              ${!scrolled ? "text-white" : "text-gray-700"}
+            `}
+          >
             {navItems.map((item) => (
               <NavLink
                 key={item.name}
                 to={item.path}
                 onClick={() => setOpen(false)}
-                className={({ isActive }) =>
-                  isActive ? "text-blue-600" : "hover:text-blue-600"
-                }
+                className="hover:text-blue-500 transition"
               >
                 {item.name}
               </NavLink>

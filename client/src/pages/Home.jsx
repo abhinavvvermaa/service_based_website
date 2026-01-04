@@ -73,12 +73,24 @@ export default function Home() {
         and embedded systems
       </p>
 
-      <Link
-        to="/contact"
-        className="inline-block bg-green-500 hover:bg-green-600 px-8 py-4 rounded-lg font-bold"
-      >
-        Get Started
-      </Link>
+      
+     <Link
+  to="/contact"
+  className="
+    inline-block
+    px-5 py-2.5
+    rounded-md
+    text-sm
+    font-semibold
+    text-white
+    transition-all
+  "
+  style={{
+    backgroundColor: "#07A5E6",
+  }}
+>
+  Get Started
+</Link>
 
     </div>
   </div>
@@ -106,21 +118,35 @@ export default function Home() {
 
     {/* TEXT ON IMAGE — BELOW PCB */}
     <div className="absolute bottom-12 left-0 right-0 px-6 text-center text-white">
-      <h1 className="text-xl font-semibold leading-snug mb-3">
-        Cutting-edge Electronics Solutions
-      </h1>
+      <h1 className="text-2xl sm:text-3xl font-extrabold leading-tight mb-4">
+  Cutting-edge <br />
+  <span className="text-white">Electronics Solutions</span>
+</h1>
 
       <p className="text-xs text-gray-200 leading-relaxed mb-5">
         Empowering your business with innovative electronic
         and embedded systems
       </p>
 
-      <Link
-        to="/contact"
-        className="inline-block bg-green-500 px-5 py-2.5 rounded-md text-sm font-semibold"
-      >
-        Get Started
-      </Link>
+     <Link
+  to="/contact"
+  className="
+    inline-block
+    px-5 py-2.5
+    rounded-md
+    text-sm
+    font-semibold
+    text-white
+    transition-all
+  "
+  style={{
+    backgroundColor: "#07A5E6",
+  }}
+>
+  Get Started
+</Link>
+
+
     </div>
   </div>
 

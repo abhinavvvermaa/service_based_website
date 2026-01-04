@@ -87,67 +87,67 @@ function ProductCard({ icon: Icon, title, features, bgImage }) {
 export default function Solutions() {
   return (
     <div className="bg-gray-50 text-gray-800">
-
       {/* ================= WAVY HERO BACKGROUND ================= */}
-<section className="relative overflow-hidden text-white">
+      <section className="relative overflow-hidden text-white">
+        {/* Base Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-fuchsia-500" />
 
-  {/* Base Gradient */}
-  <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-fuchsia-500 to-indigo-500" />
 
-  {/* Wavy Shape 1 */}
-  <svg
-    className="absolute inset-0 w-full h-full"
-    viewBox="0 0 1440 600"
-    preserveAspectRatio="none"
-  >
-    <path
-      fill="rgba(255,255,255,0.12)"
-      d="M0,200 C240,300 480,100 720,160 960,220 1200,320 1440,180 L1440,0 L0,0 Z"
-    />
-  </svg>
+        {/* Wavy Shape 1 */}
+        <svg
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 1440 600"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="rgba(255,255,255,0.12)"
+            d="M0,200 C240,300 480,100 720,160 960,220 1200,320 1440,180 L1440,0 L0,0 Z"
+          />
+        </svg>
 
-  {/* Wavy Shape 2 */}
-  <svg
-    className="absolute inset-0 w-full h-full"
-    viewBox="0 0 1440 600"
-    preserveAspectRatio="none"
-  >
-    <path
-      fill="rgba(255,255,255,0.08)"
-      d="M0,300 C300,200 600,350 900,260 1200,170 1380,260 1440,300 L1440,0 L0,0 Z"
-    />
-  </svg>
+        {/* Wavy Shape 2 */}
+        <svg
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 1440 600"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="rgba(255,255,255,0.08)"
+            d="M0,300 C300,200 600,350 900,260 1200,170 1380,260 1440,300 L1440,0 L0,0 Z"
+          />
+        </svg>
 
-  {/* Wavy Shape 3 */}
-  <svg
-    className="absolute inset-0 w-full h-full"
-    viewBox="0 0 1440 600"
-    preserveAspectRatio="none"
-  >
-    <path
-      fill="rgba(255,255,255,0.06)"
-      d="M0,420 C260,360 520,420 780,390 1040,360 1200,420 1440,380 L1440,0 L0,0 Z"
-    />
-  </svg>
+        {/* Wavy Shape 3 */}
+        <svg
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 1440 600"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="rgba(255,255,255,0.06)"
+            d="M0,420 C260,360 520,420 780,390 1040,360 1200,420 1440,380 L1440,0 L0,0 Z"
+          />
+        </svg>
 
-  {/* CONTENT */}
-  <div className="relative z-10 max-w-6xl mx-auto px-8 py-36">
-    <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
-      Smart Appliance IoT Solutions
-    </h1>
+        {/* CONTENT */}
+        <div className="relative z-10 max-w-6xl mx-auto px-8 py-24 text-center">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
+            Smart Appliance IoT Solutions
+          </h1>
 
-    <p className="max-w-4xl text-lg md:text-xl text-white/90">
-      Super powering appliances, consumer durable and consumer electronics
-      brands by providing truly end-to-end IoT solutions
-    </p>
-  </div>
-
-</section>
-
+          <p className="max-w-4xl mx-auto text-lg md:text-xl text-white/90">
+            Super powering appliances, consumer durable and consumer electronics
+            brands by providing truly end-to-end IoT solutions
+          </p>
+        </div>
+      </section>
 
       {/* ================= PRODUCTS ================= */}
       <section className="py-24 px-8 max-w-7xl mx-auto space-y-24">
-        <ProductCard icon={Lightbulb} title="Smart Bulbs" bgImage={bulbImg}
+        <ProductCard
+          icon={Lightbulb}
+          title="Smart Bulbs"
+          bgImage={bulbImg}
           features={[
             { icon: Power, text: "Power On / Off" },
             { icon: Sparkles, text: "Mood Lighting Setup" },
@@ -158,7 +158,10 @@ export default function Solutions() {
           ]}
         />
 
-        <ProductCard icon={Power} title="Smart Switches & Plugs" bgImage={switchImg}
+        <ProductCard
+          icon={Power}
+          title="Smart Switches & Plugs"
+          bgImage={switchImg}
           features={[
             { icon: Power, text: "Power On / Off" },
             { icon: Clock, text: "Scheduling" },
@@ -166,7 +169,10 @@ export default function Solutions() {
           ]}
         />
 
-        <ProductCard icon={Fan} title="Smart Air Coolers" bgImage={coolerImg}
+        <ProductCard
+          icon={Fan}
+          title="Smart Air Coolers"
+          bgImage={coolerImg}
           features={[
             { icon: Power, text: "Power On / Off" },
             { icon: Fan, text: "Fan Speed & Swing Control" },
@@ -178,7 +184,10 @@ export default function Solutions() {
           ]}
         />
 
-        <ProductCard icon={Wind} title="Smart Chimneys" bgImage={chimneyImg}
+        <ProductCard
+          icon={Wind}
+          title="Smart Chimneys"
+          bgImage={chimneyImg}
           features={[
             { icon: Power, text: "Power On / Off" },
             { icon: Wind, text: "Air Flow Control" },
@@ -188,7 +197,10 @@ export default function Solutions() {
           ]}
         />
 
-        <ProductCard icon={Thermometer} title="Smart Air Conditioners" bgImage={acImg}
+        <ProductCard
+          icon={Thermometer}
+          title="Smart Air Conditioners"
+          bgImage={acImg}
           features={[
             { icon: Power, text: "Power On / Off" },
             { icon: Thermometer, text: "Temperature Control" },
@@ -200,7 +212,10 @@ export default function Solutions() {
           ]}
         />
 
-        <ProductCard icon={Droplets} title="Smart Water Heater" bgImage={heaterImg}
+        <ProductCard
+          icon={Droplets}
+          title="Smart Water Heater"
+          bgImage={heaterImg}
           features={[
             { icon: Power, text: "Power On / Off" },
             { icon: Thermometer, text: "Temperature Control" },
@@ -210,7 +225,10 @@ export default function Solutions() {
           ]}
         />
 
-        <ProductCard icon={Filter} title="Smart Water Purifiers" bgImage={purifierImg}
+        <ProductCard
+          icon={Filter}
+          title="Smart Water Purifiers"
+          bgImage={purifierImg}
           features={[
             { icon: Filter, text: "Filter Life Status" },
             { icon: Waves, text: "Input & Output TDS Sensors" },
@@ -223,7 +241,10 @@ export default function Solutions() {
           ]}
         />
 
-        <ProductCard icon={Wind} title="Smart Air Purifiers" bgImage={airPurifierImg}
+        <ProductCard
+          icon={Wind}
+          title="Smart Air Purifiers"
+          bgImage={airPurifierImg}
           features={[
             { icon: Power, text: "Power On / Off" },
             { icon: Fan, text: "Fan Speed Control" },
@@ -236,7 +257,10 @@ export default function Solutions() {
           ]}
         />
 
-        <ProductCard icon={Fan} title="Smart Fans" bgImage={fanImg}
+        <ProductCard
+          icon={Fan}
+          title="Smart Fans"
+          bgImage={fanImg}
           features={[
             { icon: Power, text: "Power On / Off" },
             { icon: Fan, text: "Fan Speed Control" },
@@ -249,128 +273,132 @@ export default function Solutions() {
       </section>
 
       {/* ================= FOOTER ================= */}
-<footer className="bg-black text-gray-400 pt-20 pb-10 px-6">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <footer className="bg-black text-gray-400 pt-20 pb-10 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* COMPANY INFO */}
+          <div>
+            <h3 className="text-white text-2xl font-bold mb-4">
+              Navni ElectroTech
+            </h3>
+            <p className="text-sm mb-6">
+              Transforming ideas into production-ready electronic solutions.
+            </p>
 
-    {/* COMPANY INFO */}
-    <div>
-      <h3 className="text-white text-2xl font-bold mb-4">
-        Navni ElectroTech
-      </h3>
-      <p className="text-sm mb-6">
-        Transforming ideas into production-ready electronic solutions.
-      </p>
+            {/* SOCIAL ICONS */}
+            <div className="flex gap-4">
+              <a
+                href="https://www.facebook.com/share/1BnPRozJaw/"
+                className="hover:text-blue-500 transition"
+              >
+                <Facebook />
+              </a>
+              <a
+                href="https://www.instagram.com/navnielectrotech?igsh=bmIzM3c0ODV1bThm"
+                className="hover:text-pink-500 transition"
+              >
+                <Instagram />
+              </a>
+            </div>
+          </div>
 
-      {/* SOCIAL ICONS */}
-      <div className="flex gap-4">
-        <a href="https://www.facebook.com/share/1BnPRozJaw/" className="hover:text-blue-500 transition">
-          <Facebook />
-        </a>
-        <a href="https://www.instagram.com/navnielectrotech?igsh=bmIzM3c0ODV1bThm" className="hover:text-pink-500 transition">
-          <Instagram />
-        </a>
-      </div>
-    </div>
+          {/* SERVICES */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Services</h4>
+            <ul className="space-y-2 text-sm">
+              <li>Electronic Hardware Design</li>
+              <li>PCB Design Services</li>
+              <li>Embedded Firmware</li>
+              <li>IoT Product Development</li>
+              <li>Cloud Integration</li>
+            </ul>
+          </div>
 
-    {/* SERVICES */}
-    <div>
-      <h4 className="text-white font-semibold mb-4">Services</h4>
-      <ul className="space-y-2 text-sm">
-        <li>Electronic Hardware Design</li>
-        <li>PCB Design Services</li>
-        <li>Embedded Firmware</li>
-        <li>IoT Product Development</li>
-        <li>Cloud Integration</li>
-      </ul>
-    </div>
+          {/* CONTACT */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Contact</h4>
 
-    {/* CONTACT */}
-<div>
-  <h4 className="text-white font-semibold mb-4">Contact</h4>
+            <div className="flex items-start gap-3 mb-3">
+              <Phone size={18} />
+              <span className="text-sm">+91-9634624084</span>
+            </div>
 
-  <div className="flex items-start gap-3 mb-3">
-    <Phone size={18} />
-    <span className="text-sm">+91-9634624084</span>
-  </div>
+            <div className="flex items-start gap-3 mb-3">
+              <Mail size={18} />
+              <span className="text-sm">contact@navnielectrotech.com</span>
+            </div>
 
-  <div className="flex items-start gap-3 mb-3">
-    <Mail size={18} />
-    <span className="text-sm">contact@navnielectrotech.com</span>
-  </div>
+            <div className="flex items-start gap-3 mb-4">
+              <MapPin size={18} />
+              <span className="text-sm">
+                6c/21-c, Azad Nagar Gali No-3,
+                <br />
+                Agra, Uttar Pradesh
+              </span>
+            </div>
 
-  <div className="flex items-start gap-3 mb-4">
-    <MapPin size={18} />
-    <span className="text-sm">
-      6c/21-c, Azad Nagar Gali No-3,<br />
-      Agra, Uttar Pradesh
-    </span>
-  </div>
+            {/* MAP */}
+            <a
+              href="https://www.google.com/maps?q=6c/21-c,+Azad+Nagar+Gali+No-3,+Agra,+Uttar+Pradesh"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <iframe
+                title="Navni ElectroTech Location"
+                src="https://www.google.com/maps?q=6c/21-c,+Azad+Nagar+Gali+No-3,+Agra,+Uttar+Pradesh&output=embed"
+                className="w-full h-32 rounded-xl border border-gray-700 hover:opacity-90 transition"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </a>
+          </div>
 
-  {/* MAP */}
-  <a
-    href="https://www.google.com/maps?q=6c/21-c,+Azad+Nagar+Gali+No-3,+Agra,+Uttar+Pradesh"
-    target="_blank"
-    rel="noreferrer"
-  >
-    <iframe
-      title="Navni ElectroTech Location"
-      src="https://www.google.com/maps?q=6c/21-c,+Azad+Nagar+Gali+No-3,+Agra,+Uttar+Pradesh&output=embed"
-      className="w-full h-32 rounded-xl border border-gray-700 hover:opacity-90 transition"
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-    />
-  </a>
-</div>
+          {/* QUICK LINKS */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/about" className="hover:text-white transition">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="hover:text-white transition">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/career" className="hover:text-white transition">
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-white transition">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
 
+        {/* BOTTOM BAR */}
+        <div className="border-t border-gray-800 mt-12 pt-6 text-center text-sm">
+          <p className="text-gray-500">
+            © 2025 Navni ElectroTech. All rights reserved.
+          </p>
 
-    {/* QUICK LINKS */}
-    <div>
-      <h4 className="text-white font-semibold mb-4">Quick Links</h4>
-      <ul className="space-y-2 text-sm">
-        <li>
-          <Link to="/about" className="hover:text-white transition">
-            About Us
-          </Link>
-        </li>
-        <li>
-          <Link to="/services" className="hover:text-white transition">
-            Services
-          </Link>
-        </li>
-        <li>
-          <Link to="/career" className="hover:text-white transition">
-            Careers
-          </Link>
-        </li>
-        <li>
-          <Link to="/contact" className="hover:text-white transition">
-            Contact
-          </Link>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  {/* BOTTOM BAR */}
-  <div className="border-t border-gray-800 mt-12 pt-6 text-center text-sm">
-    <p className="text-gray-500">
-      © 2025 Navni ElectroTech. All rights reserved.
-    </p>
-
-    <div className="flex justify-center gap-6 mt-3">
-      <Link to="/privacy" className="hover:text-white">
-        Privacy Policy
-      </Link>
-      <Link to="/terms&conditions" className="hover:text-white">
-        Terms & Conditions
-      </Link>
-      <Link to="/contact" className="hover:text-white">
-        Contact Us
-      </Link>
-    </div>
-  </div>
-</footer>
-
+          <div className="flex justify-center gap-6 mt-3">
+            <Link to="/privacy" className="hover:text-white">
+              Privacy Policy
+            </Link>
+            <Link to="/terms&conditions" className="hover:text-white">
+              Terms & Conditions
+            </Link>
+            <Link to="/contact" className="hover:text-white">
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
