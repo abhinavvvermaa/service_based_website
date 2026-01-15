@@ -2,8 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 
 // Logos
-import blue_logo from "../assets/Blue Logo.svg";
-import white_logo from "../assets/White Logo.svg";
+import blue_logo from "../assets/Blue-Logo.svg";
+import white_logo from "../assets/White-Logo.svg";
 
 export default function Navbar() {
   const location = useLocation();
