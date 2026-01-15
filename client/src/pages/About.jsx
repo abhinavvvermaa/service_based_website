@@ -2,6 +2,7 @@ import { Facebook, Instagram, Phone, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { blogs } from "../data/blog";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 /* ================= ANIMATIONS ================= */
 const fadeUp = {
@@ -13,14 +14,15 @@ const fadeUp = {
   },
 };
 
-
 const fade = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { duration: 1 } },
 };
 
-
 export default function About() {
+  useEffect(() => {
+    document.title = "About Us – Navni ElectroTech";
+  }, []);
   return (
     <div className="font-sans bg-gray-50 text-gray-800">
       {/* ================= WAVY HERO SECTION ================= */}
@@ -287,32 +289,43 @@ export default function About() {
 
             <div className="flex items-start gap-3 mb-3">
               <Phone size={18} />
-              <span className="text-sm">+91-9634624084</span>
+              <a
+                href="tel:+919315612790"
+                className="text-sm hover:text-white transition"
+              >
+                +91-9315612790
+              </a>
             </div>
 
+            {/* EMAIL */}
             <div className="flex items-start gap-3 mb-3">
               <Mail size={18} />
-              <span className="text-sm">contact@navnielectrotech.com</span>
+              <a
+                href="mailto:contact@navnielectrotech.com"
+                className="text-sm hover:text-white transition"
+              >
+                contact@navnielectrotech.com
+              </a>
             </div>
 
             <div className="flex items-start gap-3 mb-4">
               <MapPin size={18} />
               <span className="text-sm">
-                6c/21-c, Azad Nagar Gali No-3,
+                Sector-70,
                 <br />
-                Agra, Uttar Pradesh
+                Noida, Uttar Pradesh
               </span>
             </div>
 
             {/* MAP */}
             <a
-              href="https://www.google.com/maps?q=6c/21-c,+Azad+Nagar+Gali+No-3,+Agra,+Uttar+Pradesh"
+              href="https://www.google.com/maps?q=Sector+70,+Noida,+Uttar+Pradesh"
               target="_blank"
               rel="noreferrer"
             >
               <iframe
                 title="Navni ElectroTech Location"
-                src="https://www.google.com/maps?q=6c/21-c,+Azad+Nagar+Gali+No-3,+Agra,+Uttar+Pradesh&output=embed"
+                src="https://www.google.com/maps?q=Sector+70,+Noida,+Uttar+Pradesh&output=embed"
                 className="w-full h-32 rounded-xl border border-gray-700 hover:opacity-90 transition"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -351,7 +364,7 @@ export default function About() {
         {/* BOTTOM BAR */}
         <div className="border-t border-gray-800 mt-12 pt-6 text-center text-sm">
           <p className="text-gray-500">
-            © 2025 Navni ElectroTech. All rights reserved.
+            © 2026 Navni ElectroTech. All rights reserved.
           </p>
 
           <div className="flex justify-center gap-6 mt-3">

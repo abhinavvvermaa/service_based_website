@@ -2,15 +2,23 @@ import { useState, useEffect, useRef } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 
 // Logos
-import logo from "../assets/logo.png";
-import white_logo from "../assets/White_Logo.png";
+import blue_logo from "../assets/Blue Logo.svg";
+import white_logo from "../assets/White Logo.svg";
 
 export default function Navbar() {
   const location = useLocation();
   const menuRef = useRef(null);
 
+  // ✅ IMPORTANT: initialize correctly on first paint
+  const [scrolled, setScrolled] = useState(() => window.scrollY > 50);
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+
+  // ✅ hydration flag to prevent transparent flash
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
 
   /* ================= SCROLL HANDLER ================= */
   useEffect(() => {
@@ -61,7 +69,9 @@ export default function Navbar() {
       className={`
         top-0 left-0 w-full z-50 transition-all duration-300
         ${
-          !scrolled
+          !hydrated
+            ? "fixed bg-white"
+            : !scrolled
             ? "absolute bg-transparent"
             : "fixed bg-white/90 backdrop-blur shadow-md"
         }
@@ -71,7 +81,7 @@ export default function Navbar() {
         {/* LOGO */}
         <Link to="/" className="flex items-center z-10">
           <img
-            src={!scrolled ? white_logo : logo}
+            src={!scrolled ? white_logo : blue_logo}
             alt="Navni ElectroTech"
             className="h-9 w-auto transition-all duration-300"
           />

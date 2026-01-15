@@ -7,7 +7,7 @@ export default function WhatsAppButton() {
 
   return (
     <a
-      href={`https://wa.me/919634624084?text=${message}`}
+      href={`https://wa.me/9315612790?text=${message}`}
       target="_blank"
       rel="noreferrer"
       aria-label="Chat on WhatsApp"

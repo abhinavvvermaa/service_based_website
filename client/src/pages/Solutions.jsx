@@ -34,6 +34,23 @@ import heaterImg from "../assets/solutions/heater.avif";
 import purifierImg from "../assets/solutions/water_purifier1.avif";
 import airPurifierImg from "../assets/solutions/air_purifier.avif";
 import fanImg from "../assets/solutions/fan.avif";
+import { motion } from "framer-motion";
+import { useEffect } from "react";
+
+/* ================= ANIMATIONS ================= */
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const fade = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 1 } },
+};
 
 /* FEATURE */
 function Feature({ icon: Icon, text }) {
@@ -85,13 +102,15 @@ function ProductCard({ icon: Icon, title, features, bgImage }) {
 }
 
 export default function Solutions() {
+  useEffect(() => {
+  document.title = "Solutions – Navni ElectroTech";
+}, []);
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* ================= WAVY HERO BACKGROUND ================= */}
       <section className="relative overflow-hidden text-white">
         {/* Base Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-fuchsia-500" />
-
 
         {/* Wavy Shape 1 */}
         <svg
@@ -131,149 +150,220 @@ export default function Solutions() {
 
         {/* CONTENT */}
         <div className="relative z-10 max-w-6xl mx-auto px-8 py-24 text-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
-            Smart Appliance IoT Solutions
-          </h1>
+          <motion.div initial="hidden" animate="visible" variants={fadeUp}>
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
+              Smart Appliance IoT Solutions
+            </h1>
 
-          <p className="max-w-4xl mx-auto text-lg md:text-xl text-white/90">
-            Super powering appliances, consumer durable and consumer electronics
-            brands by providing truly end-to-end IoT solutions
-          </p>
+            <p className="max-w-4xl mx-auto text-lg md:text-xl text-white/90">
+              Super powering appliances, consumer durable and consumer
+              electronics brands by providing truly end-to-end IoT solutions
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* ================= PRODUCTS ================= */}
       <section className="py-24 px-8 max-w-7xl mx-auto space-y-24">
-        <ProductCard
-          icon={Lightbulb}
-          title="Smart Bulbs"
-          bgImage={bulbImg}
-          features={[
-            { icon: Power, text: "Power On / Off" },
-            { icon: Sparkles, text: "Mood Lighting Setup" },
-            { icon: Gauge, text: "White Gradient & Intensity" },
-            { icon: Clock, text: "Scheduling" },
-            { icon: Palette, text: "Change Colors" },
-            { icon: Mic, text: "Voice Control" },
-          ]}
-        />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2, once: true }}
+          variants={fadeUp}
+        >
+          <ProductCard
+            icon={Lightbulb}
+            title="Smart Bulbs"
+            bgImage={bulbImg}
+            features={[
+              { icon: Power, text: "Power On / Off" },
+              { icon: Sparkles, text: "Mood Lighting Setup" },
+              { icon: Gauge, text: "White Gradient & Intensity" },
+              { icon: Clock, text: "Scheduling" },
+              { icon: Palette, text: "Change Colors" },
+              { icon: Mic, text: "Voice Control" },
+            ]}
+          />
+        </motion.div>
 
-        <ProductCard
-          icon={Power}
-          title="Smart Switches & Plugs"
-          bgImage={switchImg}
-          features={[
-            { icon: Power, text: "Power On / Off" },
-            { icon: Clock, text: "Scheduling" },
-            { icon: Mic, text: "Voice Control" },
-          ]}
-        />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2, once: true }}
+          variants={fadeUp}
+        >
+          <ProductCard
+            icon={Power}
+            title="Smart Switches & Plugs"
+            bgImage={switchImg}
+            features={[
+              { icon: Power, text: "Power On / Off" },
+              { icon: Clock, text: "Scheduling" },
+              { icon: Mic, text: "Voice Control" },
+            ]}
+          />
+        </motion.div>
 
-        <ProductCard
-          icon={Fan}
-          title="Smart Air Coolers"
-          bgImage={coolerImg}
-          features={[
-            { icon: Power, text: "Power On / Off" },
-            { icon: Fan, text: "Fan Speed & Swing Control" },
-            { icon: Thermometer, text: "Indoor Temperature" },
-            { icon: Settings, text: "Mode Selection" },
-            { icon: Droplets, text: "Water Level Indication" },
-            { icon: Clock, text: "Scheduling" },
-            { icon: Mic, text: "Voice Control" },
-          ]}
-        />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2, once: true }}
+          variants={fadeUp}
+        >
+          <ProductCard
+            icon={Fan}
+            title="Smart Air Coolers"
+            bgImage={coolerImg}
+            features={[
+              { icon: Power, text: "Power On / Off" },
+              { icon: Fan, text: "Fan Speed & Swing Control" },
+              { icon: Thermometer, text: "Indoor Temperature" },
+              { icon: Settings, text: "Mode Selection" },
+              { icon: Droplets, text: "Water Level Indication" },
+              { icon: Clock, text: "Scheduling" },
+              { icon: Mic, text: "Voice Control" },
+            ]}
+          />
+        </motion.div>
 
-        <ProductCard
-          icon={Wind}
-          title="Smart Chimneys"
-          bgImage={chimneyImg}
-          features={[
-            { icon: Power, text: "Power On / Off" },
-            { icon: Wind, text: "Air Flow Control" },
-            { icon: Clock, text: "Scheduling" },
-            { icon: Bell, text: "Service Booking" },
-            { icon: Mic, text: "Voice Control" },
-          ]}
-        />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2, once: true }}
+          variants={fadeUp}
+        >
+          <ProductCard
+            icon={Wind}
+            title="Smart Chimneys"
+            bgImage={chimneyImg}
+            features={[
+              { icon: Power, text: "Power On / Off" },
+              { icon: Wind, text: "Air Flow Control" },
+              { icon: Clock, text: "Scheduling" },
+              { icon: Bell, text: "Service Booking" },
+              { icon: Mic, text: "Voice Control" },
+            ]}
+          />
+        </motion.div>
 
-        <ProductCard
-          icon={Thermometer}
-          title="Smart Air Conditioners"
-          bgImage={acImg}
-          features={[
-            { icon: Power, text: "Power On / Off" },
-            { icon: Thermometer, text: "Temperature Control" },
-            { icon: Fan, text: "Fan Speed & Swing Control" },
-            { icon: Settings, text: "Mode Selection" },
-            { icon: Clock, text: "Scheduling" },
-            { icon: Bell, text: "Service Booking" },
-            { icon: Mic, text: "Voice Control" },
-          ]}
-        />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2, once: true }}
+          variants={fadeUp}
+        >
+          <ProductCard
+            icon={Thermometer}
+            title="Smart Air Conditioners"
+            bgImage={acImg}
+            features={[
+              { icon: Power, text: "Power On / Off" },
+              { icon: Thermometer, text: "Temperature Control" },
+              { icon: Fan, text: "Fan Speed & Swing Control" },
+              { icon: Settings, text: "Mode Selection" },
+              { icon: Clock, text: "Scheduling" },
+              { icon: Bell, text: "Service Booking" },
+              { icon: Mic, text: "Voice Control" },
+            ]}
+          />
+        </motion.div>
 
-        <ProductCard
-          icon={Droplets}
-          title="Smart Water Heater"
-          bgImage={heaterImg}
-          features={[
-            { icon: Power, text: "Power On / Off" },
-            { icon: Thermometer, text: "Temperature Control" },
-            { icon: Clock, text: "Scheduling" },
-            { icon: AlertTriangle, text: "Fault Alerts" },
-            { icon: Mic, text: "Voice Control" },
-          ]}
-        />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2, once: true }}
+          variants={fadeUp}
+        >
+          <ProductCard
+            icon={Droplets}
+            title="Smart Water Heater"
+            bgImage={heaterImg}
+            features={[
+              { icon: Power, text: "Power On / Off" },
+              { icon: Thermometer, text: "Temperature Control" },
+              { icon: Clock, text: "Scheduling" },
+              { icon: AlertTriangle, text: "Fault Alerts" },
+              { icon: Mic, text: "Voice Control" },
+            ]}
+          />
+        </motion.div>
 
-        <ProductCard
-          icon={Filter}
-          title="Smart Water Purifiers"
-          bgImage={purifierImg}
-          features={[
-            { icon: Filter, text: "Filter Life Status" },
-            { icon: Waves, text: "Input & Output TDS Sensors" },
-            { icon: Gauge, text: "Pump Power & Flow Status" },
-            { icon: AlertTriangle, text: "Filter Alerts" },
-            { icon: Droplets, text: "Tank Water Level" },
-            { icon: Clock, text: "Running Hours" },
-            { icon: ShieldCheck, text: "RTC-based Warranty" },
-            { icon: Mic, text: "Voice Control" },
-          ]}
-        />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2, once: true }}
+          variants={fadeUp}
+        >
+          <ProductCard
+            icon={Filter}
+            title="Smart Water Purifiers"
+            bgImage={purifierImg}
+            features={[
+              { icon: Filter, text: "Filter Life Status" },
+              { icon: Waves, text: "Input & Output TDS Sensors" },
+              { icon: Gauge, text: "Pump Power & Flow Status" },
+              { icon: AlertTriangle, text: "Filter Alerts" },
+              { icon: Droplets, text: "Tank Water Level" },
+              { icon: Clock, text: "Running Hours" },
+              { icon: ShieldCheck, text: "RTC-based Warranty" },
+              { icon: Mic, text: "Voice Control" },
+            ]}
+          />
+        </motion.div>
 
-        <ProductCard
-          icon={Wind}
-          title="Smart Air Purifiers"
-          bgImage={airPurifierImg}
-          features={[
-            { icon: Power, text: "Power On / Off" },
-            { icon: Fan, text: "Fan Speed Control" },
-            { icon: Gauge, text: "PM 2.5 Sensor" },
-            { icon: Thermometer, text: "Indoor Temperature Sensor" },
-            { icon: AlertTriangle, text: "Filter Alerts" },
-            { icon: Settings, text: "Mode Selection" },
-            { icon: Clock, text: "Scheduling" },
-            { icon: Mic, text: "Voice Control" },
-          ]}
-        />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2, once: true }}
+          variants={fadeUp}
+        >
+          <ProductCard
+            icon={Wind}
+            title="Smart Air Purifiers"
+            bgImage={airPurifierImg}
+            features={[
+              { icon: Power, text: "Power On / Off" },
+              { icon: Fan, text: "Fan Speed Control" },
+              { icon: Gauge, text: "PM 2.5 Sensor" },
+              { icon: Thermometer, text: "Indoor Temperature Sensor" },
+              { icon: AlertTriangle, text: "Filter Alerts" },
+              { icon: Settings, text: "Mode Selection" },
+              { icon: Clock, text: "Scheduling" },
+              { icon: Mic, text: "Voice Control" },
+            ]}
+          />
+        </motion.div>
 
-        <ProductCard
-          icon={Fan}
-          title="Smart Fans"
-          bgImage={fanImg}
-          features={[
-            { icon: Power, text: "Power On / Off" },
-            { icon: Fan, text: "Fan Speed Control" },
-            { icon: Thermometer, text: "Indoor Temperature" },
-            { icon: Settings, text: "Mode Selection" },
-            { icon: Clock, text: "Scheduling" },
-            { icon: Mic, text: "Voice Control" },
-          ]}
-        />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2, once: true }}
+          variants={fadeUp}
+        >
+          <ProductCard
+            icon={Fan}
+            title="Smart Fans"
+            bgImage={fanImg}
+            features={[
+              { icon: Power, text: "Power On / Off" },
+              { icon: Fan, text: "Fan Speed Control" },
+              { icon: Thermometer, text: "Indoor Temperature" },
+              { icon: Settings, text: "Mode Selection" },
+              { icon: Clock, text: "Scheduling" },
+              { icon: Mic, text: "Voice Control" },
+            ]}
+          />
+        </motion.div>
       </section>
 
       {/* ================= FOOTER ================= */}
-      <footer className="bg-black text-gray-400 pt-20 pb-10 px-6">
+      <motion.footer
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ amount: 0.2 }}
+        transition={{ duration: 1 }}
+        className="bg-black text-gray-400 pt-20 pb-10 px-6"
+      >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* COMPANY INFO */}
           <div>
@@ -284,7 +374,6 @@ export default function Solutions() {
               Transforming ideas into production-ready electronic solutions.
             </p>
 
-            {/* SOCIAL ICONS */}
             <div className="flex gap-4">
               <a
                 href="https://www.facebook.com/share/1BnPRozJaw/"
@@ -319,7 +408,7 @@ export default function Solutions() {
 
             <div className="flex items-start gap-3 mb-3">
               <Phone size={18} />
-              <span className="text-sm">+91-9634624084</span>
+              <span className="text-sm">+91-9315612790</span>
             </div>
 
             <div className="flex items-start gap-3 mb-3">
@@ -330,21 +419,21 @@ export default function Solutions() {
             <div className="flex items-start gap-3 mb-4">
               <MapPin size={18} />
               <span className="text-sm">
-                6c/21-c, Azad Nagar Gali No-3,
+                Sector-70,
                 <br />
-                Agra, Uttar Pradesh
+                Noida, Uttar Pradesh
               </span>
             </div>
 
             {/* MAP */}
             <a
-              href="https://www.google.com/maps?q=6c/21-c,+Azad+Nagar+Gali+No-3,+Agra,+Uttar+Pradesh"
+              href="https://www.google.com/maps?q=Sector+70,+Noida,+Uttar+Pradesh"
               target="_blank"
               rel="noreferrer"
             >
               <iframe
                 title="Navni ElectroTech Location"
-                src="https://www.google.com/maps?q=6c/21-c,+Azad+Nagar+Gali+No-3,+Agra,+Uttar+Pradesh&output=embed"
+                src="https://www.google.com/maps?q=Sector+70,+Noida,+Uttar+Pradesh&output=embed"
                 className="w-full h-32 rounded-xl border border-gray-700 hover:opacity-90 transition"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -383,22 +472,25 @@ export default function Solutions() {
         {/* BOTTOM BAR */}
         <div className="border-t border-gray-800 mt-12 pt-6 text-center text-sm">
           <p className="text-gray-500">
-            © 2025 Navni ElectroTech. All rights reserved.
+            © 2026 Navni ElectroTech. All rights reserved.
           </p>
 
           <div className="flex justify-center gap-6 mt-3">
-            <Link to="/privacy" className="hover:text-white">
+            <Link to="/privacy" className="hover:text-white transition">
               Privacy Policy
             </Link>
-            <Link to="/terms&conditions" className="hover:text-white">
+            <Link
+              to="/terms&conditions"
+              className="hover:text-white transition"
+            >
               Terms & Conditions
             </Link>
-            <Link to="/contact" className="hover:text-white">
+            <Link to="/contact" className="hover:text-white transition">
               Contact Us
             </Link>
           </div>
         </div>
-      </footer>
+      </motion.footer>
     </div>
   );
 }

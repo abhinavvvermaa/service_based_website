@@ -1,0 +1,72 @@
+<svg width="128" height="128" viewBox="0 0 128 128"
+     xmlns="http://www.w3.org/2000/svg">
+
+<style>
+  .head {
+    animation: moveDown 1.8s ease-in-out infinite;
+  }
+
+  @keyframes moveDown {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(14px); }
+    100% { transform: translateY(0); }
+  }
+
+  .component {
+    animation: pulse 1.8s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+
+  @keyframes pulse {
+    0%   { transform: scale(1); opacity: 0.8; }
+    50%  { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+  }
+
+  .scan {
+    animation: blink 1.8s linear infinite;
+  }
+
+  @keyframes blink {
+    0%,100% { opacity: 0.4; }
+    50%     { opacity: 1; }
+  }
+</style>
+
+<!-- PCB Panel -->
+<rect x="12" y="32" width="104" height="72" rx="8"
+      fill="#F5F5F5" stroke="#9E9E9E" stroke-width="4"/>
+
+<!-- PCB Tracks -->
+<g stroke="#43A047" stroke-width="4" stroke-linecap="round">
+  <line x1="28" y1="52" x2="52" y2="52"/>
+  <line x1="28" y1="64" x2="52" y2="64"/>
+  <line x1="28" y1="76" x2="52" y2="76"/>
+</g>
+
+<!-- Scan Frame -->
+<g class="scan" stroke="#000" stroke-width="4" fill="none">
+  <path d="M56 52 h10 v10"/>
+  <path d="M88 52 h-10 v10"/>
+  <path d="M56 84 h10 v-10"/>
+  <path d="M88 84 h-10 v-10"/>
+</g>
+
+<!-- Component -->
+<rect x="64" y="60" width="16" height="16" rx="2"
+      fill="#FFD54F" class="component"/>
+
+<!-- Pick & Place Head -->
+<g class="head">
+  <rect x="58" y="8" width="12" height="28" rx="6"
+        fill="#BDBDBD"/>
+  <polygon points="64,36 58,52 70,52"
+           fill="#9E9E9E"/>
+</g>
+
+<!-- Top Machine Bar -->
+<rect x="80" y="8" width="36" height="10" rx="4"
+      fill="#1DE9B6"/>
+
+</svg>

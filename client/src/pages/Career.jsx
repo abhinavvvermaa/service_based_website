@@ -11,8 +11,28 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
+import { motion } from "framer-motion";
+import { useEffect } from "react";
+
+/* ================= ANIMATIONS ================= */
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const fade = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 1 } },
+};
 
 export default function Careers() {
+  useEffect(() => {
+    document.title = "Career – Navni ElectroTech";
+  }, []);
   const [showModal, setShowModal] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
   const formRef = useRef();
@@ -80,72 +100,84 @@ export default function Careers() {
     <div className="bg-gray-50 text-gray-800">
       {/* ================= HERO ================= */}
       <section className="relative overflow-hidden text-white">
-  {/* Base Gradient – SAME AS ABOUT */}
-  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-fuchsia-500" />
+        {/* Base Gradient – SAME AS ABOUT */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-fuchsia-500" />
 
-  {/* Wave Layer 1 */}
-  <svg
-    className="absolute inset-0 w-full h-full"
-    viewBox="0 0 1440 600"
-    preserveAspectRatio="none"
-  >
-    <path
-      fill="rgba(255,255,255,0.14)"
-      d="M0,220 C240,320 480,120 720,180 960,240 1200,340 1440,200 L1440,0 L0,0 Z"
-    />
-  </svg>
+        {/* Wave Layer 1 */}
+        <svg
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 1440 600"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="rgba(255,255,255,0.14)"
+            d="M0,220 C240,320 480,120 720,180 960,240 1200,340 1440,200 L1440,0 L0,0 Z"
+          />
+        </svg>
 
-  {/* Wave Layer 2 */}
-  <svg
-    className="absolute inset-0 w-full h-full"
-    viewBox="0 0 1440 600"
-    preserveAspectRatio="none"
-  >
-    <path
-      fill="rgba(255,255,255,0.1)"
-      d="M0,320 C300,240 600,380 900,300 1200,220 1380,300 1440,340 L1440,0 L0,0 Z"
-    />
-  </svg>
+        {/* Wave Layer 2 */}
+        <svg
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 1440 600"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="rgba(255,255,255,0.1)"
+            d="M0,320 C300,240 600,380 900,300 1200,220 1380,300 1440,340 L1440,0 L0,0 Z"
+          />
+        </svg>
 
-  {/* Wave Layer 3 */}
-  <svg
-    className="absolute inset-0 w-full h-full"
-    viewBox="0 0 1440 600"
-    preserveAspectRatio="none"
-  >
-    <path
-      fill="rgba(255,255,255,0.07)"
-      d="M0,420 C260,380 520,420 780,400 1040,380 1200,420 1440,390 L1440,0 L0,0 Z"
-    />
-  </svg>
+        {/* Wave Layer 3 */}
+        <svg
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 1440 600"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="rgba(255,255,255,0.07)"
+            d="M0,420 C260,380 520,420 780,400 1040,380 1200,420 1440,390 L1440,0 L0,0 Z"
+          />
+        </svg>
 
-  {/* CONTENT */}
-  <div className="relative z-10 max-w-6xl mx-auto px-8 py-24 text-center">
-    <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
-      Join Our Team
-    </h1>
+        {/* CONTENT */}
+        <div className="relative z-10 max-w-6xl mx-auto px-8 py-24 text-center">
+          <motion.div initial="hidden" animate="visible" variants={fadeUp}>
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
+              Join Our Team
+            </h1>
 
-    <p className="max-w-4xl mx-auto text-lg md:text-xl text-white/90">
-      Build your career in Electronics, R&D, Production and PCB Design.
-    </p>
-  </div>
-</section>
-
+            <p className="max-w-4xl mx-auto text-lg md:text-xl text-white/90">
+              Build your career in Electronics, R&D, Production and PCB Design.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* ================= OPEN POSITIONS ================= */}
       <section className="py-20 px-8 max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-14">
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2, once: true }}
+          variants={fadeUp}
+          className="text-4xl font-bold text-center mb-14"
+        >
           Current Openings
-        </h2>
+        </motion.h2>
 
         <div className="space-y-6">
           {jobs.map((job, index) => (
-            <div
+            <motion.div
               key={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.2, once: true }}
+              variants={fadeUp}
+              whileHover={{ y: -4 }}
               className="bg-white p-8 rounded-2xl border border-gray-100
-                         shadow-sm hover:shadow-xl transition
-                         flex flex-col md:flex-row md:items-center
-                         md:justify-between gap-6"
+               shadow-sm hover:shadow-xl transition
+               flex flex-col md:flex-row md:items-center
+               md:justify-between gap-6"
             >
               <div>
                 <h3 className="text-2xl font-semibold mb-2">{job.title}</h3>
@@ -179,7 +211,7 @@ export default function Careers() {
               >
                 Apply <ArrowRight className="w-5 h-5" />
               </button>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -209,183 +241,184 @@ export default function Careers() {
             </h2>
 
             {/* ================= FORM ================= */}
-         <form
-  ref={formRef}
-  onSubmit={sendApplication}
-  className="grid grid-cols-1 md:grid-cols-2 gap-5"
->
-  {/* JOB TITLE */}
-  <input name="job_title" type="hidden" value={selectedJob.title} />
+            <form
+              ref={formRef}
+              onSubmit={sendApplication}
+              className="grid grid-cols-1 md:grid-cols-2 gap-5"
+            >
+              {/* JOB TITLE */}
+              <input name="job_title" type="hidden" value={selectedJob.title} />
 
-  {/* NAME */}
-  <input
-    name="name"
-    placeholder="Name *"
-    required
-    className="border-b p-3 outline-none w-full"
-  />
+              {/* NAME */}
+              <input
+                name="name"
+                placeholder="Name *"
+                required
+                className="border-b p-3 outline-none w-full"
+              />
 
-  {/* EMAIL */}
-  <input
-    type="email"
-    name="email"
-    placeholder="Email *"
-    required
-    pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
-    title="Please enter a valid email address"
-    className="border-b p-3 outline-none w-full"
-  />
+              {/* EMAIL */}
+              <input
+                type="email"
+                name="email"
+                placeholder="Email *"
+                required
+                pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                title="Please enter a valid email address"
+                className="border-b p-3 outline-none w-full"
+              />
 
-  {/* PHONE */}
-  <input
-    type="tel"
-    name="phone"
-    placeholder="Phone *"
-    required
-    pattern="[0-9]{10}"
-    inputMode="numeric"
-    maxLength="10"
-    title="Enter 10-digit phone number"
-    onInput={(e) =>
-      (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
-    }
-    className="border-b p-3 outline-none w-full"
-  />
+              {/* PHONE */}
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone *"
+                required
+                pattern="[0-9]{10}"
+                inputMode="numeric"
+                maxLength="10"
+                title="Enter 10-digit phone number"
+                onInput={(e) =>
+                  (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
+                }
+                className="border-b p-3 outline-none w-full"
+              />
 
-  {/* QUALIFICATION */}
-  <input
-    name="qualification"
-    placeholder="Qualification *"
-    required
-    className="border-b p-3 outline-none w-full"
-  />
+              {/* QUALIFICATION */}
+              <input
+                name="qualification"
+                placeholder="Qualification *"
+                required
+                className="border-b p-3 outline-none w-full"
+              />
 
-  {/* ================= FRESHER ================= */}
-  {selectedJob.type === "fresher" && (
-    <>
-      <input
-        name="year_of_passing"
-        placeholder="Year of Passing *"
-        required
-        inputMode="numeric"
-        maxLength="4"
-        pattern="[0-9]{4}"
-        title="Enter valid year"
-        onInput={(e) =>
-          (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
-        }
-        className="border-b p-3 outline-none col-span-1 md:col-span-2"
-      />
+              {/* ================= FRESHER ================= */}
+              {selectedJob.type === "fresher" && (
+                <>
+                  <input
+                    name="year_of_passing"
+                    placeholder="Year of Passing *"
+                    required
+                    inputMode="numeric"
+                    maxLength="4"
+                    pattern="[0-9]{4}"
+                    title="Enter valid year"
+                    onInput={(e) =>
+                      (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
+                    }
+                    className="border-b p-3 outline-none col-span-1 md:col-span-2"
+                  />
 
-      <div className="col-span-1 md:col-span-2 bg-gray-50 p-4 rounded-lg text-sm">
-        <strong>Note:</strong> If work performance is good, a stipend of{" "}
-        <span className="font-semibold text-green-600">
-          ₹10,000 per month
-        </span>{" "}
-        will be provided.
-      </div>
-    </>
-  )}
+                  <div className="col-span-1 md:col-span-2 bg-gray-50 p-4 rounded-lg text-sm">
+                    <strong>Note:</strong> If work performance is good, a
+                    stipend of{" "}
+                    <span className="font-semibold text-green-600">
+                      ₹10,000 per month
+                    </span>{" "}
+                    will be provided.
+                  </div>
+                </>
+              )}
 
-  {/* ================= EXPERIENCED ================= */}
-  {selectedJob.type === "experienced" && (
-    <>
-      <input
-        name="current_salary"
-        placeholder="Current Salary *"
-        required
-        inputMode="numeric"
-        onInput={(e) =>
-          (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
-        }
-        className="border-b p-3 outline-none w-full"
-      />
+              {/* ================= EXPERIENCED ================= */}
+              {selectedJob.type === "experienced" && (
+                <>
+                  <input
+                    name="current_salary"
+                    placeholder="Current Salary *"
+                    required
+                    inputMode="numeric"
+                    onInput={(e) =>
+                      (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
+                    }
+                    className="border-b p-3 outline-none w-full"
+                  />
 
-      <input
-        name="expected_salary"
-        placeholder="Expected Salary *"
-        required
-        inputMode="numeric"
-        onInput={(e) =>
-          (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
-        }
-        className="border-b p-3 outline-none w-full"
-      />
+                  <input
+                    name="expected_salary"
+                    placeholder="Expected Salary *"
+                    required
+                    inputMode="numeric"
+                    onInput={(e) =>
+                      (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
+                    }
+                    className="border-b p-3 outline-none w-full"
+                  />
 
-      <input
-        name="notice_period"
-        placeholder="Notice Period *"
-        required
-        className="border-b p-3 outline-none w-full"
-      />
+                  <input
+                    name="notice_period"
+                    placeholder="Notice Period *"
+                    required
+                    className="border-b p-3 outline-none w-full"
+                  />
 
-      {/* NOIDA LOCATION */}
-      <div className="col-span-1 md:col-span-2">
-        <p className="mb-3 font-medium text-gray-700">
-          Are you comfortable for Noida Location? *
-        </p>
+                  {/* NOIDA LOCATION */}
+                  <div className="col-span-1 md:col-span-2">
+                    <p className="mb-3 font-medium text-gray-700">
+                      Are you comfortable for Noida Location? *
+                    </p>
 
-        <div className="flex gap-6">
-          <label className="flex items-center gap-2 cursor-pointer">
-            <input
-              type="radio"
-              name="relocate"
-              value="Yes"
-              required
-              className="accent-blue-600"
-            />
-            <span>Yes</span>
-          </label>
+                    <div className="flex gap-6">
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="relocate"
+                          value="Yes"
+                          required
+                          className="accent-blue-600"
+                        />
+                        <span>Yes</span>
+                      </label>
 
-          <label className="flex items-center gap-2 cursor-pointer">
-            <input
-              type="radio"
-              name="relocate"
-              value="No"
-              className="accent-blue-600"
-            />
-            <span>No</span>
-          </label>
-        </div>
-      </div>
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="relocate"
+                          value="No"
+                          className="accent-blue-600"
+                        />
+                        <span>No</span>
+                      </label>
+                    </div>
+                  </div>
 
-      <input
-        name="total_experience"
-        placeholder="Total Work Experience (Years) *"
-        required
-        inputMode="decimal"
-        pattern="^[0-9]+(\.[0-9]+)?$"
-        className="border-b p-3 outline-none col-span-1 md:col-span-2"
-      />
+                  <input
+                    name="total_experience"
+                    placeholder="Total Work Experience (Years) *"
+                    required
+                    inputMode="decimal"
+                    pattern="^[0-9]+(\.[0-9]+)?$"
+                    className="border-b p-3 outline-none col-span-1 md:col-span-2"
+                  />
 
-      <textarea
-        name="relevant_experience"
-        rows="3"
-        placeholder="Relevant Experience *"
-        required
-        className="border-b p-3 outline-none col-span-1 md:col-span-2"
-      />
-    </>
-  )}
+                  <textarea
+                    name="relevant_experience"
+                    rows="3"
+                    placeholder="Relevant Experience *"
+                    required
+                    className="border-b p-3 outline-none col-span-1 md:col-span-2"
+                  />
+                </>
+              )}
 
-  {/* RESUME */}
-  <input
-    name="resume_link"
-    placeholder="Resume Link (Google Drive) *"
-    required
-    type="url"
-    className="border-b p-3 outline-none col-span-1 md:col-span-2"
-  />
+              {/* RESUME */}
+              <input
+                name="resume_link"
+                placeholder="Resume Link (Google Drive) *"
+                required
+                type="url"
+                className="border-b p-3 outline-none col-span-1 md:col-span-2"
+              />
 
-  <p className="text-xs text-gray-500 col-span-1 md:col-span-2">
-    Please ensure the Google Drive link is set to{" "}
-    <strong>“Anyone with the link can view”</strong>.
-  </p>
+              <p className="text-xs text-gray-500 col-span-1 md:col-span-2">
+                Please ensure the Google Drive link is set to{" "}
+                <strong>“Anyone with the link can view”</strong>.
+              </p>
 
-  {/* SUBMIT BUTTON */}
-  <button
-    type="submit"
-    className="
+              {/* SUBMIT BUTTON */}
+              <button
+                type="submit"
+                className="
       col-span-1 md:col-span-2
       inline-flex items-center justify-center gap-3
       px-10 py-3
@@ -398,17 +431,22 @@ export default function Careers() {
       hover:scale-105
       active:scale-95
     "
-  >
-    Apply
-  </button>
-</form>
-
+              >
+                Apply
+              </button>
+            </form>
           </div>
         </div>
       )}
 
       {/* ================= FOOTER ================= */}
-      <footer className="bg-black text-gray-400 pt-20 pb-10 px-6">
+      <motion.footer
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ amount: 0.2 }}
+        transition={{ duration: 1 }}
+        className="bg-black text-gray-400 pt-20 pb-10 px-6"
+      >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* COMPANY INFO */}
           <div>
@@ -419,7 +457,6 @@ export default function Careers() {
               Transforming ideas into production-ready electronic solutions.
             </p>
 
-            {/* SOCIAL ICONS */}
             <div className="flex gap-4">
               <a
                 href="https://www.facebook.com/share/1BnPRozJaw/"
@@ -454,32 +491,43 @@ export default function Careers() {
 
             <div className="flex items-start gap-3 mb-3">
               <Phone size={18} />
-              <span className="text-sm">+91-9634624084</span>
+              <a
+                href="tel:+919315612790"
+                className="text-sm hover:text-white transition"
+              >
+                +91-9315612790
+              </a>
             </div>
 
+            {/* EMAIL */}
             <div className="flex items-start gap-3 mb-3">
               <Mail size={18} />
-              <span className="text-sm">contact@navnielectrotech.com</span>
+              <a
+                href="mailto:contact@navnielectrotech.com"
+                className="text-sm hover:text-white transition"
+              >
+                contact@navnielectrotech.com
+              </a>
             </div>
 
             <div className="flex items-start gap-3 mb-4">
               <MapPin size={18} />
               <span className="text-sm">
-                6c/21-c, Azad Nagar Gali No-3,
+                Sector-70,
                 <br />
-                Agra, Uttar Pradesh
+                Noida, Uttar Pradesh
               </span>
             </div>
 
             {/* MAP */}
             <a
-              href="https://www.google.com/maps?q=6c/21-c,+Azad+Nagar+Gali+No-3,+Agra,+Uttar+Pradesh"
+              href="https://www.google.com/maps?q=Sector+70,+Noida,+Uttar+Pradesh"
               target="_blank"
               rel="noreferrer"
             >
               <iframe
                 title="Navni ElectroTech Location"
-                src="https://www.google.com/maps?q=6c/21-c,+Azad+Nagar+Gali+No-3,+Agra,+Uttar+Pradesh&output=embed"
+                src="https://www.google.com/maps?q=Sector+70,+Noida,+Uttar+Pradesh&output=embed"
                 className="w-full h-32 rounded-xl border border-gray-700 hover:opacity-90 transition"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -518,22 +566,25 @@ export default function Careers() {
         {/* BOTTOM BAR */}
         <div className="border-t border-gray-800 mt-12 pt-6 text-center text-sm">
           <p className="text-gray-500">
-            © 2025 Navni ElectroTech. All rights reserved.
+            © 2026 Navni ElectroTech. All rights reserved.
           </p>
 
           <div className="flex justify-center gap-6 mt-3">
-            <Link to="/privacy" className="hover:text-white">
+            <Link to="/privacy" className="hover:text-white transition">
               Privacy Policy
             </Link>
-            <Link to="/terms&conditions" className="hover:text-white">
+            <Link
+              to="/terms&conditions"
+              className="hover:text-white transition"
+            >
               Terms & Conditions
             </Link>
-            <Link to="/contact" className="hover:text-white">
+            <Link to="/contact" className="hover:text-white transition">
               Contact Us
             </Link>
           </div>
         </div>
-      </footer>
+      </motion.footer>
     </div>
   );
 }

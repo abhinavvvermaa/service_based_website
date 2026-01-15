@@ -1,0 +1,63 @@
+<svg width="128" height="128" viewBox="0 0 128 128"
+     xmlns="http://www.w3.org/2000/svg">
+
+<style>
+  .probe {
+    animation: probeMove 1.8s ease-in-out infinite;
+  }
+
+  @keyframes probeMove {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(14px); }
+    100% { transform: translateY(0); }
+  }
+
+  .wave {
+    stroke-dasharray: 18 12;
+    animation: waveFlow 1.6s linear infinite;
+  }
+
+  @keyframes waveFlow {
+    from { stroke-dashoffset: 30; }
+    to   { stroke-dashoffset: 0; }
+  }
+
+  .status {
+    animation: blink 1.6s ease-in-out infinite;
+  }
+
+  @keyframes blink {
+    0%,100% { opacity: 0.4; }
+    50%     { opacity: 1; }
+  }
+</style>
+
+<!-- PCB Base -->
+<rect x="16" y="48" width="96" height="56" rx="8"
+      fill="#E8F5E9" stroke="#2E7D32" stroke-width="4"/>
+
+<!-- PCB Pads -->
+<g fill="#43A047">
+  <circle cx="32" cy="64" r="4"/>
+  <circle cx="32" cy="80" r="4"/>
+  <circle cx="96" cy="64" r="4"/>
+  <circle cx="96" cy="80" r="4"/>
+</g>
+
+<!-- Signal Waveform -->
+<path d="M32 92 L44 84 L56 96 L68 80 L80 96 L92 88"
+      fill="none" stroke="#1E88E5" stroke-width="4"
+      stroke-linecap="round" class="wave"/>
+
+<!-- Status LED -->
+<circle cx="104" cy="56" r="6" fill="#66BB6A" class="status"/>
+
+<!-- Probe -->
+<g class="probe">
+  <rect x="58" y="12" width="12" height="30" rx="6"
+        fill="#9E9E9E"/>
+  <polygon points="64,42 58,56 70,56"
+           fill="#616161"/>
+</g>
+
+</svg>

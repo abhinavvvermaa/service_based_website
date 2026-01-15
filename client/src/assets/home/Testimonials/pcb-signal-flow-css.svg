@@ -1,0 +1,68 @@
+<svg width="128" height="128" viewBox="0 0 128 128"
+     xmlns="http://www.w3.org/2000/svg">
+
+<style>
+  .signal {
+    stroke-dasharray: 10 14;
+    animation: flow 1.8s linear infinite;
+  }
+
+  @keyframes flow {
+    from { stroke-dashoffset: 60; }
+    to   { stroke-dashoffset: 0; }
+  }
+
+  .chip {
+    animation: pulse 1.8s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+
+  @keyframes pulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+</style>
+
+<!-- PCB -->
+<rect x="6" y="6" width="116" height="116" rx="18"
+      fill="#43A047"/>
+
+<!-- Pads -->
+<g fill="#FFD54F">
+  <circle cx="24" cy="24" r="6"/>
+  <circle cx="104" cy="24" r="6"/>
+  <circle cx="24" cy="104" r="6"/>
+  <circle cx="104" cy="104" r="6"/>
+  <circle cx="18" cy="64" r="6"/>
+  <circle cx="110" cy="64" r="6"/>
+  <circle cx="64" cy="18" r="6"/>
+  <circle cx="64" cy="110" r="6"/>
+</g>
+
+<!-- Signal Tracks -->
+<g stroke="#FFD54F" stroke-width="4" fill="none"
+   stroke-linecap="round" class="signal">
+
+  <path d="M64 64 L48 64 L48 32 L24 24"/>
+  <path d="M64 64 L64 36 L64 18"/>
+  <path d="M64 64 L80 64 L80 32 L104 24"/>
+  <path d="M64 64 L36 64 L18 64"/>
+  <path d="M64 64 L92 64 L110 64"/>
+  <path d="M64 64 L48 64 L48 96 L24 104"/>
+  <path d="M64 64 L64 92 L64 110"/>
+  <path d="M64 64 L80 64 L80 96 L104 104"/>
+
+</g>
+
+<!-- Central IC -->
+<rect x="44" y="44" width="40" height="40" rx="6"
+      fill="#263238" class="chip"/>
+
+<!-- IC Mark -->
+<rect x="50" y="52" width="6" height="16" rx="3"
+      fill="#ECEFF1"/>
+<circle cx="53" cy="72" r="3" fill="#ECEFF1"/>
+
+</svg>
