@@ -77,13 +77,17 @@ export default function Navbar() {
         }
       `}
     >
-      <nav className="max-w-7xl mx-auto px-8 py-3 flex items-center">
+      <nav
+        className={`max-w-7xl mx-auto px-8 flex items-center transition-all duration-300
+    ${scrolled ? "py-2" : "py-3"}
+  `}
+      >
         {/* LOGO */}
         <Link to="/" className="flex items-center z-10">
           <img
             src={!scrolled ? white_logo : blue_logo}
             alt="Navni ElectroTech"
-            className="h-12 w-auto transition-all duration-300"
+            className="h-9 w-auto transition-all duration-300"
           />
         </Link>
 
