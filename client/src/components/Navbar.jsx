@@ -78,17 +78,18 @@ export default function Navbar() {
       `}
     >
       <nav
-        className={`max-w-7xl mx-auto px-8 flex items-center transition-all duration-300
-    ${scrolled ? "py-2" : "py-3"}
+  className={`max-w-7xl mx-auto px-8 flex items-center transition-all duration-300
+    ${scrolled ? "py-2 md:py-4" : "py-3 md:py-6"}
   `}
-      >
+>
+
         {/* LOGO */}
         <Link to="/" className="flex items-center z-10">
           <img
-            src={!scrolled ? white_logo : blue_logo}
-            alt="Navni ElectroTech"
-            className="h-9 w-auto transition-all duration-300"
-          />
+    src={!scrolled ? white_logo : blue_logo}
+    alt="Navni ElectroTech"
+    className="h-9 md:h-12 w-auto"
+  />
         </Link>
 
         {/* DESKTOP MENU */}
