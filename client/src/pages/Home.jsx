@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
-import heroBgDesktop from "../assets/home/Desktop.png";
-import heroBgMobile from "../assets/home/Mobile.png";
+//import heroBgDesktop from "../assets/home/Desktop.png";
+import heroBgDesktop from "../assets/home/Desktop_NewBannerImg.png";
+import heroBgMobile from "../assets/home/Mobile_NewBanner.png";
+//import heroBgMobile from "../assets/home/Mobile.png";
+
 import labImg from "../assets/home/lab.jpg";
 import pcbImg from "../assets/home/pcb.png";
 import embeddedImg from "../assets/home/embedded.avif";
+import webdevImg from "../assets/home/webdev1.png";
 import embeddedProgramming from "../assets/home/Testimonials/embedded-programming.svg";
 import pcbSignalFlow from "../assets/home/Testimonials/pcb-signal-flow-css.svg";
 import productDevelopment from "../assets/home/Testimonials/product-development.svg";
@@ -89,7 +93,7 @@ export default function Home() {
           observer.disconnect();
         }
       },
-      { threshold: 0.4, rootMargin: "0px 0px -120px 0px" }
+      { threshold: 0.4, rootMargin: "0px 0px -120px 0px" },
     );
 
     if (svgSectionRef.current) observer.observe(svgSectionRef.current);
@@ -123,7 +127,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     imageRefs.current.forEach((img) => {
@@ -158,7 +162,7 @@ export default function Home() {
 
         observer.disconnect(); // ✅ ensures it runs only once
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     if (typeRef.current) observer.observe(typeRef.current);
@@ -174,7 +178,7 @@ export default function Home() {
           observer.disconnect(); // run once
         }
       },
-      { threshold: 0.4 }
+      { threshold: 0.4 },
     );
 
     if (headingRef.current) {
@@ -216,16 +220,16 @@ export default function Home() {
     <div className="font-sans bg-gray-50 text-gray-800 overflow-hidden">
       <section className="relative w-full overflow-hidden">
         {/* ================= DESKTOP HERO ================= */}
-        <div className="relative hidden md:block h-screen">
+        <div className="relative hidden md:block w-full">
           <img
             src={heroBgDesktop}
             alt="Electronics Hero"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="w-full h-auto"
           />
 
           <div className="absolute inset-0 bg-black/30"></div>
 
-          <div className="relative z-10 h-full flex items-center">
+          <div className="absolute inset-0 z-10 flex items-center">
             <div className="max-w-7xl mx-auto px-8 w-full">
               <div
                 ref={heroDesktopRef}
@@ -234,12 +238,13 @@ export default function Home() {
                 {/* HEADING */}
                 <h1
                   className={`
-      text-5xl lg:text-6xl font-extrabold mb-6 leading-tight
+      text-5xl lg:text-5xl font-bold outline-text mb-6 leading-tight
       transition-all duration-700 ease-out
       ${animateHero ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12"}
     `}
                 >
-                  Cutting-edge <br /> Electronics Solutions
+                  Cutting-edge <br /> Electronics, Embedded Systems & Web
+                  Development
                 </h1>
 
                 {/* SUBTEXT */}
@@ -250,8 +255,7 @@ export default function Home() {
       ${animateHero ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12"}
     `}
                 >
-                  Empowering your business with innovative electronic and
-                  embedded systems
+                  Innovative electronics and web solutions for modern businesses.
                 </p>
 
                 {/* BUTTON */}
@@ -306,17 +310,18 @@ export default function Home() {
             className="absolute bottom-20 left-0 right-0 px-6 text-center text-white"
           >
             <h1
-              className={`
-    text-2xl sm:text-3xl font-extrabold leading-tight mb-4
+  className={`
+    text-2xl sm:text-3xl font-bold outline-text leading-tight mb-4
     transition-all duration-700 ease-out
     ${animateHero ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"}
   `}
-              style={{ textShadow: "0 4px 20px rgba(0,0,0,0.7)" }}
-            >
-              Cutting-edge <br />
-              <span className="text-white">Electronics Solutions</span>
-            </h1>
-
+  style={{ textShadow: "0 4px 20px rgba(0,0,0,0.7)" }}
+>
+  Cutting-edge <br />
+  <span>
+  Electronics, Embedded Systems &amp; Web&nbsp;Development
+  </span>
+</h1>
             {/* SUBTEXT — SAME ANIMATION */}
             <p
               className={`
@@ -325,8 +330,7 @@ export default function Home() {
     ${animateHero ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"}
   `}
             >
-              Empowering your business with innovative electronic and embedded
-              systems
+              Innovative electronics and web solutions for modern businesses.
             </p>
 
             {/* BUTTON */}
@@ -353,6 +357,70 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ================= CORE EXPERTISE ================= */}
+      <section className="relative py-28 px-6 md:px-8 bg-gray-900 text-white overflow-hidden">
+        {/* Animated Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 animate-gradient-x"></div>
+
+        {/* Floating Particles */}
+        <div className="absolute top-16 left-24 w-2 h-2 bg-blue-500 rounded-full animate-blink-soft"></div>
+        <div className="absolute top-40 right-40 w-2 h-2 bg-purple-500 rounded-full animate-blink-soft"></div>
+        <div className="absolute bottom-24 left-1/3 w-2 h-2 bg-blue-400 rounded-full animate-blink-soft"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Our Core Expertise
+          </h2>
+
+          <p className="text-gray-300 max-w-3xl mx-auto mb-20 text-lg">
+            A powerful blend of hardware engineering, IoT connectivity, and
+            modern digital innovation.
+          </p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            {/* Card 1 */}
+            <div
+              className="bg-gray-800 p-10 rounded-2xl shadow-xl border border-gray-700 
+                      hover:-translate-y-2 hover:shadow-2xl transition duration-300"
+            >
+              <Cpu className="w-12 h-12 text-blue-500 mx-auto mb-6" />
+              <h3 className="text-xl font-bold mb-3">Hardware Engineering</h3>
+              <p className="text-gray-400">
+                PCB design, sensor integration, embedded systems and
+                production-ready electronics.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div
+              className="bg-gray-800 p-10 rounded-2xl shadow-xl border border-gray-700 
+                      hover:-translate-y-2 hover:shadow-2xl transition duration-300"
+            >
+              <Wifi className="w-12 h-12 text-purple-500 mx-auto mb-6" />
+              <h3 className="text-xl font-bold mb-3">IoT & Connectivity</h3>
+              <p className="text-gray-400">
+                Secure device communication, cloud integration and real-time
+                monitoring systems.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div
+              className="bg-gray-800 p-10 rounded-2xl shadow-xl border border-gray-700 
+                      hover:-translate-y-2 hover:shadow-2xl transition duration-300"
+            >
+              <Code className="w-12 h-12 text-blue-500 mx-auto mb-6" />
+              <h3 className="text-xl font-bold mb-3">
+                Web & Digital Solutions
+              </h3>
+              <p className="text-gray-400">
+                Business websites, dashboards, e-commerce platforms and scalable
+                full-stack web applications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* ================= END-TO-END IOT STACK ================= */}
       <section className="relative py-28 px-8 bg-gray-900 text-white overflow-hidden">
         {/* animated background */}
@@ -580,13 +648,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ================= DIGITAL SOLUTIONS ================= */}
+      <section className="py-28 px-6 md:px-8 bg-gray-100">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+          {/* LEFT CONTENT */}
+          <div className="flex flex-col">
+            {/* Heading */}
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Modern Web & Application Development
+            </h2>
+
+            {/* Image (Mobile Only – After Heading) */}
+            <img
+              src={webdevImg}
+              alt="Web Development"
+              className="rounded-2xl shadow-2xl mb-6 md:hidden"
+            />
+
+            {/* Content */}
+            <p className="text-gray-600 mb-6 text-base md:text-lg">
+              We design and develop scalable business websites, admin dashboards
+              and e-commerce platforms using modern technologies like React.js,
+              Node.js, WordPress and Shopify.
+            </p>
+
+            <ul className="space-y-3 text-gray-700">
+              <li>✔ Custom Full-Stack Applications</li>
+              <li>✔ Corporate & Startup Websites</li>
+              <li>✔ Shopify & WooCommerce Stores</li>
+              <li>✔ IoT Monitoring Web Panels</li>
+            </ul>
+
+            <Link
+              to="/services"
+              className="inline-flex items-center justify-center
+           mt-6
+           px-6 py-2.5
+           text-sm
+           md:px-5 md:py-2 md:text-sm
+           rounded-lg
+           bg-gradient-to-r from-blue-600 to-purple-600
+           text-white font-semibold
+           hover:scale-105 transition"
+            >
+              Explore Web Services
+            </Link>
+          </div>
+
+          {/* Image (Desktop Only) */}
+          <div className="hidden md:block">
+            <img
+              src={webdevImg}
+              alt="Web Development"
+              className="rounded-2xl shadow-2xl"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* ================= WHY CHOOSE ================= */}
-      <section className="py-24 bg-gray-100 px-8">
-        <h2 className="text-4xl font-bold text-center mb-16 animate-fade-up">
+      <section className="py-24 bg-gray-100 px-6 md:px-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 animate-fade-up">
           Why Choose Navni ElectroTech?
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 max-w-6xl mx-auto">
           {[
             {
               title: "Hardware-First Engineering",
@@ -603,29 +729,46 @@ export default function Home() {
               desc: "Optimized for reliability, scalability, and mass production.",
               back: "Built to survive manufacturing, certification, and long-term use.",
             },
+            {
+              title: "Scalable Web Applications",
+              desc: "Custom portals, admin dashboards, and high-performance web platforms.",
+              back: "Engineered with modern full-stack architecture for speed, security, and scalability.",
+            },
+            {
+              title: "E-Commerce & Platform Development",
+              desc: "Custom Shopify, WooCommerce and tailored digital commerce solutions.",
+              back: "Optimized for conversions, seamless payments, and premium user experience.",
+            },
+            {
+              title: "IoT Cloud & Web Dashboards",
+              desc: "Real-time device monitoring, analytics, and secure cloud integration.",
+              back: "Connecting hardware to intelligent web platforms with secure and scalable infrastructure.",
+            },
           ].map((item, index) => (
             <div key={index} className="group perspective">
               <div
                 className="
-    relative
-    bg-white
-    p-10
-    rounded-xl
-    shadow-lg
-    text-center
-    transition-transform duration-700
-    transform-style-preserve-3d
-    group-hover:[transform:rotateY(180deg)]
-    min-h-[200px]
-    flex items-center justify-center
-  "
+            relative
+            bg-white
+            p-8 md:p-10
+            rounded-xl
+            shadow-lg
+            text-center
+            transition-transform duration-700
+            transform-style-preserve-3d
+            group-hover:[transform:rotateY(180deg)]
+            min-h-[220px]
+            flex items-center justify-center
+          "
               >
                 {/* FRONT */}
                 <div className="backface-hidden">
-                  <h3 className="text-xl font-semibold mb-4 text-blue-600">
+                  <h3 className="text-lg md:text-xl font-semibold mb-4 text-blue-600">
                     {item.title}
                   </h3>
-                  <p className="text-gray-700">{item.desc}</p>
+                  <p className="text-gray-700 text-sm md:text-base">
+                    {item.desc}
+                  </p>
                 </div>
 
                 {/* BACK */}
@@ -638,10 +781,12 @@ export default function Home() {
               rounded-xl
               backface-hidden
               rotate-y-180
-              p-8
+              p-6 md:p-8
             "
                 >
-                  <p className="font-semibold">{item.back}</p>
+                  <p className="font-semibold text-sm md:text-base">
+                    {item.back}
+                  </p>
                 </div>
               </div>
             </div>
@@ -699,6 +844,76 @@ export default function Home() {
               <p className="font-semibold text-sm">{name}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ================= WEB & DIGITAL SOLUTIONS (HOME) ================= */}
+      <section className="py-20 md:py-28 px-6 md:px-8 bg-white">
+        <div className="max-w-7xl mx-auto text-center mb-14 md:mb-20">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Web & Digital Development Solutions
+          </h2>
+
+          <p className="text-gray-600 max-w-3xl mx-auto text-base md:text-lg">
+            Scalable, high-performance web applications and digital platforms
+            designed to integrate seamlessly with our IoT and hardware
+            innovations.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 max-w-7xl mx-auto">
+          {/* Card 1 */}
+          <div className="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-300">
+            <h3 className="text-xl font-semibold mb-5">
+              Custom Web Applications
+            </h3>
+
+            <ul className="space-y-3 text-gray-600 text-sm md:text-base">
+              <li>✔ Full-Stack Development</li>
+              <li>✔ Admin Dashboards</li>
+              <li>✔ API Integrations</li>
+              <li>✔ Cloud Deployment</li>
+            </ul>
+          </div>
+
+          {/* Card 2 */}
+          <div className="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-300">
+            <h3 className="text-xl font-semibold mb-5">E-Commerce Platforms</h3>
+
+            <ul className="space-y-3 text-gray-600 text-sm md:text-base">
+              <li>✔ Shopify Development</li>
+              <li>✔ WooCommerce Stores</li>
+              <li>✔ Payment Integration</li>
+              <li>✔ Performance Optimization</li>
+            </ul>
+          </div>
+
+          {/* Card 3 */}
+          <div className="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-300">
+            <h3 className="text-xl font-semibold mb-5">IoT Web Dashboards</h3>
+
+            <ul className="space-y-3 text-gray-600 text-sm md:text-base">
+              <li>✔ Real-Time Monitoring</li>
+              <li>✔ Data Visualization</li>
+              <li>✔ Analytics Panels</li>
+              <li>✔ Secure Cloud Backend</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center mt-14">
+          <Link
+            to="/services"
+            className="inline-flex items-center justify-center
+                 px-6 py-3
+                 rounded-lg
+                 bg-gradient-to-r from-blue-600 to-purple-600
+                 text-white font-semibold
+                 hover:scale-105 transition"
+          >
+            Explore Digital Services
+          </Link>
         </div>
       </section>
 

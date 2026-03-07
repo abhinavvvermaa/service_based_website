@@ -97,10 +97,13 @@ export default function About() {
             Navni ElectroTech
           </h3>
           <p className="leading-relaxed">
-            Navni ElectroTech comes from “Nav”, meaning new, symbolizing
-            innovation and forward-thinking. It represents new technology and
-            smart electronic solutions designed to solve real-world problems and
-            shape the future.
+            Navni ElectroTech embodies the spirit of innovation and progress.
+            “Nav” symbolizes new possibilities, fresh ideas, and forward
+            momentum — values that define our approach to electronics, IoT
+            ecosystems, and advanced web & application development. It
+            represents intelligent, scalable solutions crafted to bridge
+            technology and real-world impact while shaping the future of
+            connected industries.
           </p>
         </motion.div>
       </section>
@@ -143,11 +146,11 @@ export default function About() {
               Our Vision
             </h2>
             <p className="leading-relaxed">
-              To become a globally trusted electronics and IoT innovation
-              partner, shaping the future through intelligent engineering,
-              reliable solutions, and future-ready technologies that empower
-              industries, improve lives, and drive sustainable technological
-              progress.
+              To become a globally trusted technology and innovation partner,
+              delivering intelligent electronics, IoT, and scalable digital
+              solutions — including web and application development — that
+              empower industries, enhance user experiences, and drive
+              sustainable technological progress.
             </p>
           </motion.div>
 
@@ -163,8 +166,9 @@ export default function About() {
             </h2>
             <p className="leading-relaxed">
               Our mission is to design, develop, and deliver end-to-end
-              electronic hardware and embedded solutions that bridge the gap
-              between ideas and real-world products.
+              electronic hardware, embedded systems, IoT platforms, and modern
+              web & application solutions that seamlessly bridge the gap between
+              ideas and real-world, scalable products.
             </p>
           </motion.div>
         </div>
@@ -181,11 +185,14 @@ export default function About() {
         >
           <h2 className="text-4xl font-bold text-center mb-10">Our Journey</h2>
           <p className="leading-relaxed text-gray-700">
-            As a startup, Navni ElectroTech was founded to transform ideas into
-            practical electronic solutions. Built by passionate engineers, we
-            bridge the gap between hardware and software under one roof,
-            delivering reliable and innovative products. We continue to grow
-            with a strong focus on quality, technology, and real-world impact.
+            Navni ElectroTech was born from a passion to turn bold ideas into
+            intelligent, real-world solutions. What began as an
+            electronics-focused startup has evolved into a dynamic technology
+            company integrating hardware engineering, IoT systems, and modern
+            web & application development under one roof. Driven by innovation
+            and purpose, we strive to build reliable, scalable, and future-ready
+            solutions that not only solve problems but create meaningful impact
+            across industries and communities.
           </p>
         </motion.div>
       </section>

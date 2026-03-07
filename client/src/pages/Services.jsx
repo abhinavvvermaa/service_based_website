@@ -19,9 +19,31 @@ import firmwareImg from "../assets/services/firmware.avif";
 import prototypeImg from "../assets/services/prototyping.avif";
 import testingImg from "../assets/services/testing.jpg";
 import manufacturingImg from "../assets/services/production.jpg";
+import custom from "../assets/services/custom.png";
+import platform from "../assets/services/platform_based.png";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import {Globe } from "lucide-react";
+import { Search, PenTool, ShieldCheck, Rocket, Wrench } from "lucide-react";
+import {
+  Smartphone,
+  Zap,
+  TrendingUp,
+  Palette,
+  Headphones,
+} from "lucide-react";
+import {
+  FaReact,
+  FaNodeJs,
+  FaWordpress,
+  FaShopify,
+} from "react-icons/fa";
 
+import {
+  SiMongodb,
+  SiExpress,
+  SiWoocommerce,
+} from "react-icons/si";
 export default function Services() {
   useEffect(() => {
     document.title = "Services – Navni ElectroTech";
@@ -69,6 +91,28 @@ export default function Services() {
       ),
       img: manufacturingImg,
     },
+    {
+      title: "Custom Web & Application Development",
+      desc: "We build fully customized, scalable websites and web applications using modern full-stack technologies such as React.js, Angular, Node.js, and robust backend architectures, delivering high performance, security, and solutions tailored to your business needs.",
+      icon: <Code2 className="w-10 h-10 text-blue-600 animate-float-soft" />,
+      img: custom,
+    },
+
+  {
+  title: "Platform-Based Website Development",
+  desc: (
+    <>
+      We build high-performance websites and{" "}
+      <span className="whitespace-nowrap">e-commerce</span> stores using
+      platforms like Shopify and WordPress. Instead of relying on pre-built
+      free themes, we customize theme code to create unique, premium-quality
+      websites that deliver advanced functionality, optimized performance,
+      and a tailored user experience.
+    </>
+  ),
+  icon: <Globe className="w-10 h-10 text-purple-600 animate-float-soft" />,
+  img: platform,
+},
   ];
 
   return (
@@ -165,6 +209,333 @@ export default function Services() {
           ))}
         </div>
       </section>
+
+      {/* ================= WEB DEVELOPMENT SECTION ================= */}
+<section className="py-24 bg-gray-100 px-8">
+  <div className="max-w-7xl mx-auto">
+
+    {/* TITLE */}
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-bold mb-4">
+        Complete Web Development Solutions
+      </h2>
+      <p className="text-gray-600 max-w-3xl mx-auto">
+        From fully custom applications to platform-based business websites,
+        we deliver scalable, secure and high-performance digital solutions.
+      </p>
+    </div>
+
+   
+    {/* SUB SERVICES 
+    <div className="grid md:grid-cols-2 gap-12 mb-20">
+
+      {/* CUSTOM 
+      <div className="bg-white p-10 rounded-2xl shadow-lg">
+        <h3 className="text-2xl font-bold mb-6 text-blue-600">
+          Custom Development
+        </h3>
+        <ul className="space-y-3 text-gray-700">
+          <li>• React.js Frontend Development</li>
+          <li>• Node.js Backend APIs</li>
+          <li>• Admin Dashboards</li>
+          <li>• SaaS Applications</li>
+          <li>• IoT Web Panels</li>
+          <li>• Cloud Deployment</li>
+        </ul>
+      </div>
+
+      {/* PLATFORM 
+      <div className="bg-white p-10 rounded-2xl shadow-lg">
+        <h3 className="text-2xl font-bold mb-6 text-purple-600">
+          Platform-Based Development
+        </h3>
+        <ul className="space-y-3 text-gray-700">
+          <li>• WordPress Business Websites</li>
+          <li>• Shopify E-Commerce Stores</li>
+          <li>• WooCommerce Integration</li>
+          <li>• Wix & Squarespace</li>
+          <li>• Payment Gateway Setup</li>
+          <li>• SEO Optimization</li>
+        </ul>
+      </div>
+    </div>
+    */}
+
+    {/* ================= TECHNOLOGIES ================= */}
+<div className="text-center mb-20">
+  <h3 className="text-3xl font-bold mb-12">
+    Technologies We Work With
+  </h3>
+
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-12 justify-items-center">
+
+    <div className="flex flex-col items-center gap-3 hover:scale-110 transition">
+      <FaReact className="text-6xl text-cyan-500" />
+      <p className="font-medium">React.js</p>
+    </div>
+
+    <div className="flex flex-col items-center gap-3 hover:scale-110 transition">
+      <FaNodeJs className="text-6xl text-green-600" />
+      <p className="font-medium">Node.js</p>
+    </div>
+
+    <div className="flex flex-col items-center gap-3 hover:scale-110 transition">
+      <SiMongodb className="text-6xl text-green-700" />
+      <p className="font-medium">MongoDB</p>
+    </div>
+
+    <div className="flex flex-col items-center gap-3 hover:scale-110 transition">
+      <SiExpress className="text-6xl text-gray-800" />
+      <p className="font-medium">Express.js</p>
+    </div>
+
+    <div className="flex flex-col items-center gap-3 hover:scale-110 transition">
+      <FaWordpress className="text-6xl text-blue-600" />
+      <p className="font-medium">WordPress</p>
+    </div>
+
+    <div className="flex flex-col items-center gap-3 hover:scale-110 transition">
+      <FaShopify className="text-6xl text-green-500" />
+      <p className="font-medium">Shopify</p>
+    </div>
+
+    <div className="flex flex-col items-center gap-3 hover:scale-110 transition">
+      <SiWoocommerce className="text-6xl text-purple-600" />
+      <p className="font-medium">WooCommerce</p>
+    </div>
+
+  </div>
+</div>
+
+   {/* ================= PREMIUM DEVELOPMENT WORKFLOW ================= */}
+<section className="py-16 bg-gradient-to-b from-gray-50 to-white px-4 md:px-8">
+  <div className="max-w-6xl mx-auto">
+
+    {/* Title Animation */}
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="text-center mb-14"
+    >
+      <h3 className="text-3xl md:text-5xl font-bold mb-4">
+        Our Development Workflow
+      </h3>
+      <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-lg">
+        A refined, transparent and performance-driven process that ensures
+        your digital product is built for scalability and success.
+      </p>
+    </motion.div>
+
+    <div className="relative">
+
+      {/* Vertical Line Animation */}
+      <motion.div
+        initial={{ height: 0 }}
+        whileInView={{ height: "100%" }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="absolute left-1/2 transform -translate-x-1/2 
+                   w-[2px] 
+                   bg-gradient-to-b from-blue-500 via-purple-500 to-fuchsia-500"
+      />
+
+      <div className="space-y-6 md:space-y-10">
+
+        {[
+          {
+            title: "Requirement Analysis",
+            desc: "Understanding business goals, user needs and technical feasibility.",
+            icon: <Search size={22} />,
+          },
+          {
+            title: "UI/UX Design",
+            desc: "Crafting intuitive, modern and conversion-focused interfaces.",
+            icon: <PenTool size={22} />,
+          },
+          {
+            title: "Development",
+            desc: "Building scalable frontend & backend systems with best practices.",
+            icon: <Code2 size={22} />,
+          },
+          {
+            title: "Testing & QA",
+            desc: "Ensuring security, performance and cross-device compatibility.",
+            icon: <ShieldCheck size={22} />,
+          },
+          {
+            title: "Deployment",
+            desc: "Launching on secure cloud infrastructure with CI/CD pipelines.",
+            icon: <Rocket size={22} />,
+          },
+          {
+            title: "Maintenance",
+            desc: "Continuous improvements, monitoring and technical support.",
+            icon: <Wrench size={22} />,
+          },
+        ].map((step, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+
+            {/* Desktop Layout */}
+            <div className="hidden md:flex items-center">
+
+              {/* Left */}
+              <div className="w-1/2 px-6">
+                {index % 2 === 0 && (
+                  <div className="bg-white border border-gray-200 shadow-lg p-6 rounded-xl hover:shadow-2xl transition duration-300">
+                    <h4 className="text-xl font-bold mb-2 text-gray-800">
+                      {step.title}
+                    </h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
+                )}
+              </div>
+
+              {/* Icon Animation */}
+              <motion.div
+                whileHover={{ scale: 1.15 }}
+                className="relative z-10 flex items-center justify-center 
+                           w-16 h-16 rounded-full 
+                           bg-gradient-to-r from-blue-600 to-purple-600 
+                           text-white shadow-lg"
+              >
+                {step.icon}
+              </motion.div>
+
+              {/* Right */}
+              <div className="w-1/2 px-6">
+                {index % 2 !== 0 && (
+                  <div className="bg-white border border-gray-200 shadow-lg p-6 rounded-xl hover:shadow-2xl transition duration-300">
+                    <h4 className="text-xl font-bold mb-2 text-gray-800">
+                      {step.title}
+                    </h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Mobile Layout */}
+            <div className="md:hidden flex flex-col items-center mt-8">
+
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className="relative z-10 flex items-center justify-center 
+                           w-12 h-12 rounded-full 
+                           bg-gradient-to-r from-blue-600 to-purple-600 
+                           text-white shadow-lg mb-4"
+              >
+                {step.icon}
+              </motion.div>
+
+              <div className="w-full">
+                <div className="bg-white border border-gray-200 shadow-lg p-5 rounded-xl hover:shadow-xl transition duration-300">
+                  <h4 className="text-lg font-bold mb-2 text-gray-800">
+                    {step.title}
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {step.desc}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </motion.div>
+        ))}
+
+      </div>
+    </div>
+  </div>
+</section>
+    {/* ================= WHY CHOOSE US - PREMIUM ================= */}
+<section className="py-28 bg-gradient-to-b from-white to-gray-50 px-8">
+  <div className="max-w-7xl mx-auto">
+
+    {/* Title */}
+    <div className="text-center mb-20">
+      <h3 className="text-4xl md:text-5xl font-bold mb-6">
+        Why Choose Us for Web Development
+      </h3>
+      <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+        We combine engineering precision with modern design principles to
+        deliver secure, scalable and high-performing digital solutions.
+      </p>
+    </div>
+
+    {/* Grid */}
+    <div className="grid md:grid-cols-3 gap-10">
+
+      {[
+        {
+          title: "Mobile-First & Responsive",
+          desc: "Optimized for seamless performance across desktops, tablets and smartphones.",
+          icon: <Smartphone size={30} />,
+        },
+        {
+          title: "High Performance",
+          desc: "Fast-loading architecture built with optimized code and best performance practices.",
+          icon: <Zap size={30} />,
+        },
+        {
+          title: "Secure & Scalable",
+          desc: "Enterprise-level security standards with scalable backend systems.",
+          icon: <ShieldCheck size={30} />,
+        },
+        {
+          title: "SEO & Growth Focused",
+          desc: "Structured for search engine visibility and long-term business growth.",
+          icon: <TrendingUp size={30} />,
+        },
+        {
+          title: "Modern UI/UX Design",
+          desc: "Visually appealing, user-friendly interfaces that increase engagement.",
+          icon: <Palette size={30} />,
+        },
+        {
+          title: "Dedicated Support",
+          desc: "Ongoing maintenance, updates and technical assistance whenever needed.",
+          icon: <Headphones size={30} />,
+        },
+      ].map((item, index) => (
+        <div
+          key={index}
+          className="bg-white p-10 rounded-2xl shadow-lg border border-gray-100 
+                     hover:shadow-2xl hover:-translate-y-2 transition duration-300"
+        >
+          <div className="w-14 h-14 mb-6 flex items-center justify-center 
+                          rounded-full bg-gradient-to-r from-blue-600 to-purple-600 
+                          text-white shadow-md">
+            {item.icon}
+          </div>
+
+          <h4 className="text-xl font-bold mb-3 text-gray-800">
+            {item.title}
+          </h4>
+
+          <p className="text-gray-600 leading-relaxed">
+            {item.desc}
+          </p>
+        </div>
+      ))}
+
+    </div>
+
+  </div>
+</section>
+  </div>
+</section>
 
       {/* WHY CHOOSE */}
       <section className="bg-white py-20 px-8">

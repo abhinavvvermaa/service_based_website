@@ -34,6 +34,7 @@ import heaterImg from "../assets/solutions/heater.avif";
 import purifierImg from "../assets/solutions/water_purifier1.avif";
 import airPurifierImg from "../assets/solutions/air_purifier.avif";
 import fanImg from "../assets/solutions/fan.avif";
+import webdevImg from "../assets/home/webdev.png";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 
@@ -103,8 +104,8 @@ function ProductCard({ icon: Icon, title, features, bgImage }) {
 
 export default function Solutions() {
   useEffect(() => {
-  document.title = "Solutions – Navni ElectroTech";
-}, []);
+    document.title = "Solutions – Navni ElectroTech";
+  }, []);
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* ================= WAVY HERO BACKGROUND ================= */}
@@ -152,12 +153,12 @@ export default function Solutions() {
         <div className="relative z-10 max-w-6xl mx-auto px-8 py-24 text-center">
           <motion.div initial="hidden" animate="visible" variants={fadeUp}>
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
-              Smart Appliance IoT Solutions
+              Smart IoT & Digital Solutions
             </h1>
 
             <p className="max-w-4xl mx-auto text-lg md:text-xl text-white/90">
-              Super powering appliances, consumer durable and consumer
-              electronics brands by providing truly end-to-end IoT solutions
+              From smart appliances to powerful web ecosystems — we build
+              complete, future-ready technology solutions.
             </p>
           </motion.div>
         </div>
@@ -165,6 +166,27 @@ export default function Solutions() {
 
       {/* ================= PRODUCTS ================= */}
       <section className="py-24 px-8 max-w-7xl mx-auto space-y-24">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2, once: true }}
+          variants={fadeUp}
+        >
+          <ProductCard
+            icon={Smartphone}
+            title="Web & Application Platforms"
+            bgImage={webdevImg}
+            features={[
+              { icon: Settings, text: "Custom Full-Stack Development" },
+              { icon: Gauge, text: "Admin Dashboards" },
+              { icon: Waves, text: "IoT Data Visualization" },
+              { icon: ShieldCheck, text: "Secure Backend Systems" },
+              { icon: Clock, text: "Scalable Architecture" },
+              { icon: Mic, text: "API & Cloud Integration" },
+            ]}
+          />
+        </motion.div>
+
         <motion.div
           initial="hidden"
           whileInView="visible"
